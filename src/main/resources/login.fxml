@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerLogin">
+    <children>
+        <TextField fx:id="passwordTextField" layoutX="185.0" layoutY="333.0" prefHeight="31.0" prefWidth="200.0" promptText="Password" visible="false" />
+        <Label fx:id="passwordLabel" layoutX="97.0" layoutY="333.0" prefHeight="31.0" prefWidth="89.0" text="Password :" visible="false" />
+        <Button fx:id="loginButton" onAction="#clickedLoginButton" layoutX="386.0" layoutY="333.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" text="Login"/>
+
+        <Button fx:id="staffButton" layoutX="97.0" layoutY="86.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="155.0">
+            <graphic>
+                <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true">
+                    <children>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <ImageView fitHeight="130.0" fitWidth="155.0">
+                            <image>
+                                <Image url="@staff.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </graphic>
+        </Button>
+
+        <Button fx:id="pipoButton" layoutX="357.0" layoutY="86.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="155.0">
+            <graphic>
+                <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true">
+                    <children>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <ImageView fitHeight="130.0" fitWidth="155.0">
+                            <image>
+                                <Image url="@pipo.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </graphic>
+        </Button>
+        <Label layoutX="158.0" layoutY="233.0" text="Staff" />
+        <Label layoutX="418.0" layoutY="233.0" text="PIPO" />
+    </children>
+</AnchorPane>

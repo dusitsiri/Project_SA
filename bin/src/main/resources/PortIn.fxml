@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerPortIn">
+   <children>
+      <TableView fx:id="tablePortIn" layoutX="750.0" layoutY="119.0" prefHeight="581.0" prefWidth="820.0">
+        <columns>
+            <TableColumn prefWidth="115.0" text="วันที่เรือแจ้งเข้า">
+                <cellValueFactory>
+                    <PropertyValueFactory property="datePortIn" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="120.0" text="เวลาที่เรือแจ้งเข้า">
+                <cellValueFactory>
+                    <PropertyValueFactory property="timePortIn" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="0.0" prefWidth="82.0" text="รหัสเรือ">
+                <cellValueFactory>
+                    <PropertyValueFactory property="idShip" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="9.0" prefWidth="105.0" text="ชนิดเรือ">
+                <cellValueFactory>
+                    <PropertyValueFactory property="typeShip" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="1.0" prefWidth="103.0" text="ชื่อเรือ">
+                <cellValueFactory>
+                    <PropertyValueFactory property="nameShip" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="176.0" text="ชื่อคนขับเรือ">
+                <cellValueFactory>
+                    <PropertyValueFactory property="nameDriver" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="118.0" text="จำนวนลูกเรือ">
+               <cellValueFactory>
+                  <PropertyValueFactory property="nameDriver" />
+               </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+      <GridPane layoutX="28.0" layoutY="74.0" prefHeight="332.0" prefWidth="178.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnPortIn" mnemonicParsing="false" onAction="#onActionbtnPortIn" prefHeight="71.0" prefWidth="264.0" text="แจ้งเรือเข้า" />
+            <Button fx:id="btnEditProduct" mnemonicParsing="false" onAction="#onActionbtnEditProduct" prefHeight="71.0" prefWidth="266.0" text="แก้ไขรายการสินค้า" GridPane.rowIndex="1" />
+            <Button fx:id="btnPortOut" mnemonicParsing="false" onAction="#onActionbtnPortOut" prefHeight="74.0" prefWidth="240.0" text="แจ้งเรือออก" GridPane.rowIndex="2" />
+            <Button fx:id="btnRePort" mnemonicParsing="false" onAction="#onActionbtnRePort" prefHeight="96.0" prefWidth="276.0" text="รายงานผล" GridPane.rowIndex="3" />
+            <Button fx:id="btnPrintPipo" mnemonicParsing="false" onAction="#onActionbtnPrintPipo" prefHeight="92.0" prefWidth="190.0" text="พิมพ์ใบ PIPO" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Pagination layoutX="529.0" layoutY="807.0" prefHeight="56.0" prefWidth="585.0" />
+      <GridPane layoutX="251.0" layoutY="167.0" prefHeight="472.0" prefWidth="98.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="110.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="21.0" minHeight="1.0" prefHeight="21.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="110.0" prefWidth="165.0" text="วันที่แจ้งเข้า" textOverrun="CLIP" />
+            <Label prefHeight="75.0" prefWidth="243.0" text="เวลา" GridPane.rowIndex="2" />
+            <Label prefHeight="97.0" prefWidth="260.0" text="รหัสเรือ" GridPane.rowIndex="4" />
+            <Label prefHeight="77.0" prefWidth="246.0" text="ชนิดเรือ" GridPane.rowIndex="6" />
+            <Label prefHeight="94.0" prefWidth="260.0" text="ชื่อเรือ" GridPane.rowIndex="8" />
+            <Label prefHeight="77.0" prefWidth="281.0" text="ชื่อคนขับ" GridPane.rowIndex="10" />
+            <Label prefHeight="96.0" prefWidth="245.0" text="จำนวนลูกน้อง" GridPane.rowIndex="12" />
+         </children>
+      </GridPane>
+      <Label layoutX="373.0" layoutY="14.0" prefHeight="77.0" prefWidth="729.0" text="             แจ้งเข้าท่าเทียบเรือกัลปังหา">
+         <font>
+            <Font size="46.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnLongOut" layoutX="23.0" layoutY="796.0" mnemonicParsing="false" onAction="#OnActionbtnLongOut" prefHeight="77.0" prefWidth="144.0" text="ออกจากระบบ" />
+      <DatePicker fx:id="portInDate" layoutX="373.0" layoutY="174.0" prefHeight="35.0" prefWidth="235.0" />
+      <Label layoutX="438.0" layoutY="240.0" prefHeight="48.0" prefWidth="13.0" text=" :">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="portInHour" layoutX="373.0" layoutY="240.0" prefHeight="48.0" prefWidth="52.0" />
+      <TextField fx:id="portInMinute" layoutX="468.0" layoutY="240.0" prefHeight="48.0" prefWidth="52.0" />
+      <TextField fx:id="portInShipNumber" layoutX="373.0" layoutY="318.0" prefHeight="35.0" prefWidth="252.0" />
+      <TextField fx:id="portInTypeShip" layoutX="373.0" layoutY="386.0" prefHeight="35.0" prefWidth="190.0" />
+      <TextField fx:id="portInNameShip" layoutX="373.0" layoutY="450.0" prefHeight="35.0" prefWidth="343.0" />
+      <TextField fx:id="portInNameDriver" layoutX="373.0" layoutY="530.0" prefHeight="31.0" prefWidth="296.0" />
+      <TextField fx:id="portInNumberSeaMan" layoutX="373.0" layoutY="595.0" prefHeight="31.0" prefWidth="78.0" />
+   </children>
+</AnchorPane>
