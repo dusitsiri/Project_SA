@@ -45,10 +45,10 @@ public class ControllerLogin {
     }
 
     public void loginComplete(ActionEvent event) throws IOException {
-        Button button = (Button) event.getSource();
-        Stage stage = (Stage) button.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../portin.fxml"));
-        stage.setScene(new Scene(loader.load()));
-        stage.show();
+//        Button button = (Button) event.getSource();
+//        Stage stage = (Stage) button.getScene().getWindow();
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("../portin.fxml"));
+//        stage.setScene(new Scene(loader.load()));
+//        stage.show();
     }
 }
