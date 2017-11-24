@@ -110,7 +110,7 @@
                   <Label text="วันเกิด" GridPane.rowIndex="3" />
                </children>
             </GridPane>
-            <Button fx:id="btnLongOut1" layoutX="309.0" layoutY="1406.0" mnemonicParsing="false" onAction="#OnActionbtnLongOut" prefHeight="77.0" prefWidth="163.0" text="เพิ่มสมาชิก" />
+            <Button fx:id="btnLongOut1" layoutX="309.0" layoutY="1406.0" mnemonicParsing="false"  prefHeight="77.0" prefWidth="163.0" text="เพิ่มสมาชิก" />
             <TableView layoutX="225.0" layoutY="1813.0" prefHeight="302.0" prefWidth="371.0">
                <columns>
                   <TableColumn prefWidth="47.0" text="ลำดับ" />
@@ -138,7 +138,7 @@
                   <Label text="จำนวน" GridPane.rowIndex="2" />
                </children>
             </GridPane>
-            <Button fx:id="btnLongOut11" layoutX="309.0" layoutY="2370.0" mnemonicParsing="false" onAction="#OnActionbtnLongOut" prefHeight="77.0" prefWidth="163.0" text="เพิ่มสินค้า" />
+            <Button fx:id="btnLongOut11" layoutX="309.0" layoutY="2370.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="163.0" text="เพิ่มสินค้า" />
             <Label alignment="CENTER" layoutX="318.0" layoutY="27.0" prefHeight="77.0" prefWidth="557.0" text="บันทึกการแจ้งเรือออก">
                <font>
                   <Font size="46.0" />
