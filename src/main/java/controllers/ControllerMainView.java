@@ -12,7 +12,7 @@ import java.io.IOException;
 public class ControllerMainView {
     Stage stage;
     @FXML private Button  btnRecordPortIn,btnRecordPortOut,
-            btnReportPortOutNextDay,btnReportPipoDaily,btnReportSalaryMonthly;
+            btnReportPortOutNextDay,btnReportPipoDaily;
 
     public void setStage(ActionEvent event){
         Button button = (Button) event.getSource();
@@ -46,10 +46,4 @@ public class ControllerMainView {
         stage.show();
     }
 
-    public void showReportSalaryOfMonthly(ActionEvent event) throws IOException {
-        setStage(event);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../reportsalarymonthly.fxml"));
-        stage.setScene(new Scene(loader.load()));
-        stage.show();
-    }
 }

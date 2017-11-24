@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@pipo.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerPortIn">
     <children>
-        <TableView fx:id="tablePortIn" layoutX="110.0" layoutY="160.0" prefHeight="461.0" prefWidth="1366.0">
+        <TableView fx:id="tablePortIn" layoutX="275.0" layoutY="104.0" prefHeight="517.0" prefWidth="871.0">
             <columns>
                 <TableColumn fx:id="columnDate" prefWidth="82.0" text="Date">
                     <cellValueFactory>

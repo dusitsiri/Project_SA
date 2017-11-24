@@ -11,10 +11,10 @@ import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.Optional;
 
 public class ControllerPortIn {
+    Stage stage;
     @FXML
     TextField portInHour, portInMinute, portInShipNumber, portInTypeShip, portInNameShip, portInNameDriver, portInNumberSeaMan;
     @FXML
@@ -97,27 +97,22 @@ public class ControllerPortIn {
         }
     }
 
-    public void onActionbtnEditProduct(ActionEvent event) {
-    }
-
-    public void onActionbtnPortOut(ActionEvent event) {
-    }
-
-    public void onActionbtnRePort(ActionEvent event) {
-    }
-
-    public void onActionbtnPrintPipo(ActionEvent event) {
-    }
-
-    public void OnActionbtnLongOut(ActionEvent event) {
-
+    public void OnActionbtnLogOut(ActionEvent event) throws IOException {
+        setStage(event);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
+        stage.setScene(new Scene(loader.load()));
+        stage.show();
     }
 
     public void refreshPage(ActionEvent event) throws IOException {
-        Button button = (Button) event.getSource();
-        Stage stage = (Stage) button.getScene().getWindow();
+        setStage(event);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/portin.fxml"));
-        stage.setScene(new Scene(loader.load(), 1600, 900));
+        stage.setScene(new Scene(loader.load()));
         stage.show();
+    }
+
+    public void setStage(ActionEvent event){
+        Button button = (Button) event.getSource();
+        stage = (Stage) button.getScene().getWindow();
     }
 }
