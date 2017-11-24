@@ -8,43 +8,64 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerLogin">
+<AnchorPane prefHeight="780.0" prefWidth="1048.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/8.0.141"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerLogin">
     <children>
-        <TextField fx:id="passwordTextField" layoutX="185.0" layoutY="333.0" prefHeight="31.0" prefWidth="200.0" promptText="Password" visible="false" />
-        <Label fx:id="passwordLabel" layoutX="97.0" layoutY="333.0" prefHeight="31.0" prefWidth="89.0" text="Password :" visible="false" />
-        <Button fx:id="loginButton" onAction="#loginOnClick" layoutX="386.0" layoutY="333.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" text="Login"/>
+        <TextField fx:id="passwordTextField" layoutX="444.0" layoutY="622.0" prefHeight="60.0" prefWidth="312.0"
+                   promptText="Password" visible="false"/>
+        <Label fx:id="passwordLabel" layoutX="302.0" layoutY="624.0" prefHeight="60.0" prefWidth="125.0"
+               text="Password :" visible="false"/>
+        <Button fx:id="loginButton" layoutX="301.0" layoutY="704.0" mnemonicParsing="false" onAction="#loginOnClick"
+                prefHeight="52.0" prefWidth="464.0" text="Login"/>
 
-        <Button fx:id="staffButton" layoutX="97.0" layoutY="86.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="155.0">
+        <Button fx:id="staffButton" layoutX="154.0" layoutY="319.0" mnemonicParsing="false" prefHeight="244.0"
+                prefWidth="327.0">
             <graphic>
-                <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true">
+                <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                      mouseTransparent="true">
                     <children>
-                        <Pane HBox.hgrow="ALWAYS" />
-                        <ImageView fitHeight="130.0" fitWidth="155.0">
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <ImageView fitHeight="225.0" fitWidth="312.0">
                             <image>
-                                <Image url="@staff.jpg" />
+                                <Image url="@staff.jpg"/>
                             </image>
                         </ImageView>
                     </children>
                 </HBox>
             </graphic>
         </Button>
+        <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="10.0" layoutX="228.0" layoutY="563.0"
+               prefHeight="43.0" prefWidth="146.0" text="Staff">
+            <font>
+                <Font size="29.0"/>
+            </font>
+        </Label>
 
-        <Button fx:id="pipoButton" layoutX="357.0" layoutY="86.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="155.0">
+        <Button fx:id="pipoButton" layoutX="646.0" layoutY="319.0" mnemonicParsing="false" prefHeight="244.0"
+                prefWidth="327.0">
             <graphic>
-                <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true">
+                <HBox alignment="CENTER" maxHeight="1.7976931348623157E308"
+                      maxWidth="1.7976931348623157E308" mouseTransparent="true">
                     <children>
-                        <Pane HBox.hgrow="ALWAYS" />
-                        <ImageView fitHeight="130.0" fitWidth="155.0">
+                        <Pane layoutX="686.0" layoutY="252.0"/>
+                        <ImageView fitHeight="225.0" fitWidth="312.0" layoutX="653.0" layoutY="328.0">
                             <image>
-                                <Image url="@pipo.jpg" />
+                                <Image url="@pipo.jpg"/>
                             </image>
                         </ImageView>
                     </children>
                 </HBox>
             </graphic>
         </Button>
-        <Label layoutX="158.0" layoutY="233.0" text="Staff" />
-        <Label layoutX="418.0" layoutY="233.0" text="PIPO" />
+        <Label alignment="CENTER" graphicTextGap="10.0" layoutX="724.0" layoutY="571.0" prefHeight="43.0"
+               prefWidth="146.0" text="PIPO">
+            <font>
+                <Font size="26.0"/>
+            </font>
+        </Label>
+
+        <Label layoutX="172.0" layoutY="38.0" prefHeight="258.0" prefWidth="825.0" styleClass="showBoat"/>
     </children>
 </AnchorPane>

@@ -1,0 +1,5 @@
+.showBoat{
+    -fx-background-image: url("boat.png");
+    -fx-background-size: 825px 258px;
+
+}
