@@ -33,7 +33,6 @@ public class ControllerLogin {
             staffButton.setMnemonicParsing(false);
 
         });
-
         passwordTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -51,9 +50,9 @@ public class ControllerLogin {
     }
 
     public void setOption(){
-        passwordTextField.requestFocus();
         showBlockInputPassword();
         passwordTextField.setText("");
+        passwordTextField.requestFocus();
     }
 
     public void showBlockInputPassword(){
