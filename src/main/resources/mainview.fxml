@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controllers.ControllerMainView"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerMainView">
     <children>
-        <Button fx:id="btnRecordPortIn" maxHeight="67.0" maxWidth="215.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortIn" prefHeight="67.0" prefWidth="215.0" text="แจ้งเรือเข้า" />
-        <Button fx:id="btnRecordPortOut" maxHeight="67.0" maxWidth="212.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortOut" prefHeight="67.0" prefWidth="212.0" text="แจ้งเรือออก" GridPane.rowIndex="2" />
-        <Button fx:id="btnReportPortOutNextDay" maxHeight="59.0" maxWidth="249.0" minHeight="59.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportOfPortOutNextDay" prefHeight="59.0" prefWidth="249.0" text="ใบรายงานเรือแจ้งออกวันพรุ่งนี้" GridPane.rowIndex="4" />
-        <Button fx:id="btnReportPipoDaily" maxHeight="67.0" maxWidth="243.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportPortInPortOutOfDaily" prefHeight="67.0" prefWidth="243.0" text="ใบรายงานแจ้งเรือเข้า-แจ้งเรือออกประจำวัน" GridPane.rowIndex="6" />
-        <Button fx:id="btnReportSalaryMonthly" maxHeight="67.0" maxWidth="233.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportSalaryOfMonthly" prefHeight="67.0" prefWidth="233.0" text="ใบรายงานรายได้ประจำเดือน" GridPane.rowIndex="8" />
+      <GridPane layoutX="24.0" layoutY="21.0" prefHeight="356.0" prefWidth="551.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+              <Button fx:id="btnReportSalaryMonthly" maxHeight="67.0" maxWidth="550.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportSalaryOfMonthly" prefHeight="67.0" prefWidth="550.0" text="ใบรายงานรายได้ประจำเดือน" GridPane.rowIndex="4" />
+              <Button fx:id="btnReportPipoDaily" maxHeight="67.0" maxWidth="549.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportPortInPortOutOfDaily" prefHeight="67.0" prefWidth="549.0" text="ใบรายงานแจ้งเรือเข้า-แจ้งเรือออกประจำวัน" GridPane.rowIndex="3" />
+              <Button fx:id="btnReportPortOutNextDay" maxHeight="68.0" maxWidth="550.0" minHeight="59.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportOfPortOutNextDay" prefHeight="68.0" prefWidth="550.0" text="ใบรายงานเรือแจ้งออกวันพรุ่งนี้" GridPane.rowIndex="2" />
+              <Button fx:id="btnRecordPortOut" maxHeight="67.0" maxWidth="551.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortOut" prefHeight="67.0" prefWidth="551.0" text="แจ้งเรือออก" GridPane.rowIndex="1" />
+              <Button fx:id="btnRecordPortIn" maxHeight="110.0" maxWidth="550.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortIn" prefHeight="70.0" prefWidth="550.0" text="แจ้งเรือเข้า" />
+         </children>
+      </GridPane>
     </children>
 </AnchorPane>
