@@ -1,0 +1,16 @@
+.root {
+    -fx-background-image: url("beach.png");
+        -fx-background-size: 400px 600px;
+
+
+
+}
+.button {
+    -fx-background-color : #29B6F6;
+    -fx-text-fill        : #E1F5FE;
+    -fx-font-weight      : 900;
+    }
+
+.button:hover {
+    -fx-background-color : #01579B;
+    }
