@@ -93,7 +93,7 @@ public class ControllerLogin {
     }
 
     public void loginComplete(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../portin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../mainview.fxml"));
         stage.setScene(new Scene(loader.load()));
         stage.show();
     }

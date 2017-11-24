@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ControllerMainView"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Button fx:id="btnRecordPortIn" maxHeight="67.0" maxWidth="215.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortIn" prefHeight="67.0" prefWidth="215.0" text="แจ้งเรือเข้า" />
+        <Button fx:id="btnRecordPortOut" maxHeight="67.0" maxWidth="212.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortOut" prefHeight="67.0" prefWidth="212.0" text="แจ้งเรือออก" GridPane.rowIndex="2" />
+        <Button fx:id="btnReportPortOutNextDay" maxHeight="59.0" maxWidth="249.0" minHeight="59.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportOfPortOutNextDay" prefHeight="59.0" prefWidth="249.0" text="ใบรายงานเรือแจ้งออกวันพรุ่งนี้" GridPane.rowIndex="4" />
+        <Button fx:id="btnReportPipoDaily" maxHeight="67.0" maxWidth="243.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportPortInPortOutOfDaily" prefHeight="67.0" prefWidth="243.0" text="ใบรายงานแจ้งเรือเข้า-แจ้งเรือออกประจำวัน" GridPane.rowIndex="6" />
+        <Button fx:id="btnReportSalaryMonthly" maxHeight="67.0" maxWidth="233.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportSalaryOfMonthly" prefHeight="67.0" prefWidth="233.0" text="ใบรายงานรายได้ประจำเดือน" GridPane.rowIndex="8" />
+    </children>
+</AnchorPane>

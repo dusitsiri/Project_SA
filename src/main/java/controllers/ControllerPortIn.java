@@ -18,7 +18,7 @@ public class ControllerPortIn {
     @FXML
     TextField portInHour, portInMinute, portInShipNumber, portInTypeShip, portInNameShip, portInNameDriver, portInNumberSeaMan;
     @FXML
-    Button btnPortIn,btnEditProduct,btnPortOut,btnRePort,btnPrintPipo,btnLongOut,btnDelete,btnDeleteAll;
+    Button btnLongOut,btnDelete,btnDeleteAll;
     @FXML
     DatePicker portInDate;
     @FXML
