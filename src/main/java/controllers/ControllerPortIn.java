@@ -29,10 +29,10 @@ public class ControllerPortIn {
 //    int row = 1;
 
 
-    public void initialize() throws SQLException {
-        tablePortIn.setItems(databaseHarbor.loadDatabase());
-
-    }
+//    public void initialize() throws SQLException {
+//        tablePortIn.setItems(databaseHarbor.loadDatabase());
+//
+//    }
 
     public void onActionbtnPortIn(ActionEvent event) {
         String type = portInTypeShip.getText();

@@ -24,7 +24,7 @@
               <Button fx:id="btnReportPipoDaily" maxHeight="67.0" maxWidth="549.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportPortInPortOutOfDaily" prefHeight="67.0" prefWidth="549.0" text="ใบรายงานแจ้งเรือเข้า-แจ้งเรือออกประจำวัน" GridPane.rowIndex="3" />
               <Button fx:id="btnReportPortOutNextDay" maxHeight="68.0" maxWidth="550.0" minHeight="59.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportOfPortOutNextDay" prefHeight="68.0" prefWidth="550.0" text="ใบรายงานเรือแจ้งออกวันพรุ่งนี้" GridPane.rowIndex="2" />
               <Button fx:id="btnRecordPortOut" maxHeight="67.0" maxWidth="551.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortOut" prefHeight="67.0" prefWidth="551.0" text="แจ้งเรือออก" GridPane.rowIndex="1" />
-              <Button fx:id="btnRecordPortIn" maxHeight="110.0" maxWidth="550.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortIn" prefHeight="70.0" prefWidth="550.0" text="แจ้งเรือเข้า" />
+              <Button fx:id="btnRecordPortIn" maxHeight="110.0" maxWidth="550.0" minHeight="67.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortIn" prefHeight="70.0" prefWidth="550.0" text="บันทึกการแจ้งเรือเข้า" />
          </children>
       </GridPane>
     </children>
