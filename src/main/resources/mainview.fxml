@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="496.0" prefWidth="737.0" stylesheets="@mainview.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerMainView">
+<AnchorPane prefHeight="780.0" prefWidth="1048.0" stylesheets="@mainview.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerMainView">
     <children>
-      <GridPane layoutX="123.0" layoutY="48.0" prefHeight="370.0" prefWidth="477.0">
+      <GridPane layoutX="123.0" layoutY="48.0" prefHeight="580.0" prefWidth="810.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -28,7 +28,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-              <Button fx:id="btnReportSalaryMonthly" maxHeight="67.0" maxWidth="550.0" minHeight="0.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportSalaryOfMonthly" prefHeight="0.0" prefWidth="477.0" text="ใบรายงานรายได้ประจำเดือน" GridPane.rowIndex="8">
+              <Button fx:id="btnReportSalaryMonthly" maxHeight="207.0" maxWidth="843.0" minHeight="0.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportSalaryOfMonthly" prefHeight="120.0" prefWidth="843.0" text="ใบรายงานรายได้ประจำเดือน" GridPane.rowIndex="8">
              <graphic>
                  <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true">
                      <children>
@@ -42,7 +42,7 @@
                  </HBox>
              </graphic>
               </Button>
-              <Button fx:id="btnReportPipoDaily" maxHeight="67.0" maxWidth="549.0" minHeight="0.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportPortInPortOutOfDaily" prefHeight="0.0" prefWidth="477.0" text="ใบรายงานแจ้งเรือเข้า-แจ้งเรือออกประจำวัน" GridPane.rowIndex="6">
+              <Button fx:id="btnReportPipoDaily" maxHeight="136.0" maxWidth="844.0" minHeight="0.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportPortInPortOutOfDaily" prefHeight="136.0" prefWidth="844.0" text="ใบรายงานแจ้งเรือเข้า-แจ้งเรือออกประจำวัน" GridPane.rowIndex="6">
                   <graphic>
                       <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true">
                           <children>
@@ -56,7 +56,7 @@
                       </HBox>
                   </graphic>
               </Button>
-              <Button fx:id="btnReportPortOutNextDay" maxHeight="68.0" maxWidth="550.0" minHeight="0.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportOfPortOutNextDay" prefHeight="0.0" prefWidth="477.0" text="ใบรายงานเรือแจ้งออกวันพรุ่งนี้" GridPane.rowIndex="4">
+              <Button fx:id="btnReportPortOutNextDay" maxHeight="181.0" maxWidth="928.0" minHeight="0.0" minWidth="150.0" mnemonicParsing="false" onAction="#showReportOfPortOutNextDay" prefHeight="181.0" prefWidth="928.0" text="ใบรายงานเรือแจ้งออกวันพรุ่งนี้" GridPane.rowIndex="4">
                   <graphic>
                       <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true">
                           <children>
@@ -70,7 +70,7 @@
                       </HBox>
                   </graphic>
               </Button>
-              <Button fx:id="btnRecordPortOut" maxHeight="67.0" maxWidth="551.0" minHeight="30.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortOut" prefHeight="30.0" prefWidth="477.0" text="แจ้งเรือออก" GridPane.rowIndex="2">
+              <Button fx:id="btnRecordPortOut" maxHeight="131.0" maxWidth="932.0" minHeight="30.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortOut" prefHeight="116.0" prefWidth="932.0" text="แจ้งเรือออก" GridPane.rowIndex="2">
                   <graphic>
                       <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true">
                           <children>
@@ -84,7 +84,7 @@
                       </HBox>
                   </graphic>
               </Button>
-              <Button fx:id="btnRecordPortIn" maxHeight="110.0" maxWidth="550.0" minHeight="38.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortIn" prefHeight="101.0" prefWidth="477.0" text="บันทึกการแจ้งเรือเข้า">
+              <Button fx:id="btnRecordPortIn" maxHeight="140.0" maxWidth="913.0" minHeight="38.0" minWidth="150.0" mnemonicParsing="false" onAction="#recordPortIn" prefHeight="140.0" prefWidth="810.0" text="บันทึกการแจ้งเรือเข้า">
                   <graphic>
                       <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true">
                           <children>
