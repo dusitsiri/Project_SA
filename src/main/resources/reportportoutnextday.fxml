@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controllers.ControllerReportPortOutNextDay"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@pipo.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerPortIn">
+    <children>
+        <TableView fx:id="tablePortIn" layoutX="110.0" layoutY="160.0" prefHeight="461.0" prefWidth="1366.0">
+            <columns>
+                <TableColumn fx:id="columnDate" prefWidth="82.0" text="Date">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="datePortIn" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="columnTime" prefWidth="95.0" text="Time">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="timePortIn" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="columnNumberShip" minWidth="0.0" prefWidth="94.0" text="ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="shipNumber" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="columnTypeShip" minWidth="9.0" prefWidth="114.0" text="Type">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="typeShip" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="columnNameShip" minWidth="1.0" prefWidth="171.0" text="Name Ship">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nameShip" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="columnNameDriver" prefWidth="117.0" text="Driver">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nameDriver" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="columnCountPeople" prefWidth="197.0" text="People">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nameDriver" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <GridPane layoutX="11.0" layoutY="74.0" prefHeight="357.0" prefWidth="212.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <Label layoutX="420.0" layoutY="14.0" prefHeight="77.0" prefWidth="729.0" text="ใบรายงานแจ้งเรือออกวันพรุ่งนี้">
+            <font>
+                <Font size="46.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnLongOut" layoutX="9.0" layoutY="796.0" mnemonicParsing="false" onAction="#OnActionbtnLongOut" prefHeight="77.0" prefWidth="163.0" text="ออกจากระบบ" />
+    </children>
 </AnchorPane>
