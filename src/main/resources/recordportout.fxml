@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerRecordPortOut">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerRecordPortOut">
    <content>
       <AnchorPane prefHeight="2983.0" prefWidth="1600.0" stylesheets="@pipo.css">
          <children>
@@ -63,15 +63,6 @@
                   <TextField prefHeight="35.0" prefWidth="190.0" promptText="ประเภทเรือ" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                </children>
             </GridPane>
-            <TableView layoutX="205.0" layoutY="802.0" prefHeight="302.0" prefWidth="371.0">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="ลำดับ" />
-                  <TableColumn prefWidth="75.0" text="ชื่อ" />
-                  <TableColumn prefWidth="75.0" text="ตำแหน่ง" />
-                  <TableColumn prefWidth="75.0" text="เพศ" />
-                  <TableColumn prefWidth="75.0" text="วันเกิด" />
-               </columns>
-            </TableView>
             <GridPane layoutX="242.0" layoutY="1104.0" prefHeight="258.0" prefWidth="297.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="91.0" />
@@ -140,6 +131,16 @@
                   <Font size="46.0" />
                </font>
             </Label>
+            <TableView layoutX="185.0" layoutY="802.0" prefHeight="302.0" prefWidth="452.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="ลำดับ" />
+                  <TableColumn prefWidth="91.0" text="เลขใบ PIPO" />
+                  <TableColumn prefWidth="72.0" text="ชื่อ" />
+                  <TableColumn prefWidth="62.0" text="ตำแหน่ง" />
+                  <TableColumn prefWidth="75.0" text="เพศ" />
+                  <TableColumn prefWidth="75.0" text="วันเกิด" />
+               </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </content>
