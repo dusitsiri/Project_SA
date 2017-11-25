@@ -37,7 +37,7 @@
                         <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <DatePicker fx:id="birthdayPicker" prefHeight="35.0" prefWidth="232.0" promptText="เลือกวันที่เรือแจ้งเข้า" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <DatePicker fx:id="datePortInPicker" prefHeight="35.0" prefWidth="232.0" promptText="เลือกวันที่เรือแจ้งเข้า" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label prefHeight="35.0" prefWidth="83.0" text="วันที่แจ้งเข้า" textOverrun="CLIP" GridPane.rowIndex="2" />
                         <Label prefHeight="97.0" prefWidth="260.0" text="เลขเรือ" />
                         <Label prefHeight="52.0" prefWidth="188.0" text="ชื่อเรือ" GridPane.rowIndex="1" />
@@ -67,7 +67,7 @@
                         <TextField fx:id="typeOfShip" maxWidth="-Infinity" prefHeight="35.0" prefWidth="228.0" promptText="ประเภทเรือ" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                     </children>
                 </GridPane>
-                <TableView layoutX="188.0" layoutY="655.0" prefHeight="342.0" prefWidth="748.0">
+                <TableView fx:id="membersOfShipTableView" layoutX="188.0" layoutY="655.0" prefHeight="342.0" prefWidth="748.0">
                     <columns>
                         <TableColumn prefWidth="75.0" text="ลำดับ" />
                         <TableColumn prefWidth="89.0" text="เลขใบ PIPO" />
@@ -104,11 +104,11 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <RadioButton mnemonicParsing="false" text="ชาย" />
-                        <RadioButton mnemonicParsing="false" text="หญิง" GridPane.columnIndex="1" />
+                        <RadioButton fx:id="maleRadioBtn" mnemonicParsing="false" text="ชาย" />
+                        <RadioButton fx:id="femaleRadioBtn" mnemonicParsing="false" text="หญิง" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
-                  <DatePicker promptText="วันเกิด" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <DatePicker fx:id="birthdayPicker" promptText="วันเกิด" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                     </children>
                 </GridPane>
                 <Button layoutX="353.0" layoutY="1350.0" mnemonicParsing="false" onAction="#clickAddMember" prefHeight="88.0" prefWidth="328.0" text="เพิ่มสมาชิก" />
