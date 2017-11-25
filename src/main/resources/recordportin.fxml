@@ -37,7 +37,7 @@
                         <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <DatePicker fx:id="birthdayPicker" prefHeight="35.0" prefWidth="232.0" promptText="เลือกวันที่เรือแจ้งเข้า" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <DatePicker fx:id="datePortInPicker" prefHeight="35.0" prefWidth="232.0" promptText="เลือกวันที่เรือแจ้งเข้า" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label prefHeight="35.0" prefWidth="83.0" text="วันที่แจ้งเข้า" textOverrun="CLIP" GridPane.rowIndex="2" />
                         <Label prefHeight="97.0" prefWidth="260.0" text="เลขเรือ" />
                         <Label prefHeight="52.0" prefWidth="188.0" text="ชื่อเรือ" GridPane.rowIndex="1" />
@@ -108,7 +108,7 @@
                         <RadioButton mnemonicParsing="false" text="หญิง" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
-                  <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <DatePicker fx:id="birthdayPicker" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                     </children>
                 </GridPane>
                 <Button layoutX="353.0" layoutY="1350.0" mnemonicParsing="false" onAction="#clickAddMember" prefHeight="88.0" prefWidth="328.0" text="เพิ่มสมาชิก" />
