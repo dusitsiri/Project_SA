@@ -66,7 +66,7 @@ public class ControllerRecordPortOut {
             countAddMembers++;
         }
         else {
-            numberOfMembers = membersOfShipTableView.getSelectionModel().getSelectedItem().getNumberOfPipoReport();
+            numberOfMembers = membersOfShipTableView.getSelectionModel().getSelectedItem().getNopipo();
         }
         return numberOfMembers;
     }
