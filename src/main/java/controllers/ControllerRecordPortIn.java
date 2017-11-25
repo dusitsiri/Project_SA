@@ -23,7 +23,8 @@ public class ControllerRecordPortIn {
     LocalDate datePortIn,birthdate;
     @FXML private TableView<MembersOfShip> membersOfShipTableView;
     @FXML private TextField numberOfShipTextField,nameOfShipTextField,hoursTextField,minutesTextField,
-            typeOfShip,nameTextField,positionTextField;
+            typeOfShip,nameTextField,positionTextField,nameOfProductTextField,typeOfProductTextField
+            ,quantityOfProductTextField;
     @FXML private RadioButton maleRadioBtn,femaleRadioBtn;
     @FXML private DatePicker datePortInPicker,birthdayPicker;
 
@@ -57,7 +58,6 @@ public class ControllerRecordPortIn {
         String position =  positionTextField.getText();
         String gender = checkGender();
         String birthday = birthdate.toString();
-        dbMemberOfShip.addMembersToDB(number, numberOfMembers, name, position, gender, birthday);
     }
     public int setNumberOfMembers(int countAddMembers){
         int numberOfMembers = 0;
@@ -76,6 +76,15 @@ public class ControllerRecordPortIn {
         else gender = "F";
         return gender;
     }
+
+    //Scenario : Add products
+    public void clickAddProduct(){
+        String nameProduct = nameOfProductTextField.getText();
+        String typeProduct = typeOfProductTextField.getText();
+        int quantityProduct = Integer.parseInt(quantityOfProductTextField.getText());
+    }
+
+    //Scenario : Log out
     public void OnActionbtnLogOut(ActionEvent event) throws IOException {
         setStage(event);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
