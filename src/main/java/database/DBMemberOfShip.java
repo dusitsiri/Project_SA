@@ -9,7 +9,7 @@ import java.sql.*;
 
 public class DBMemberOfShip {
 
-    public ObservableList<MembersOfShip> loadDBMembers() throws SQLException {
+    public ObservableList<MembersOfShip> loadDBMembers(){
         ObservableList<MembersOfShip> data = FXCollections.observableArrayList();
         Connection conn=null;
         try {
@@ -44,15 +44,6 @@ public class DBMemberOfShip {
             ex.printStackTrace();
         } catch (SQLException ex) {
             ex.printStackTrace();
-        }
-        finally {
-            if (conn!=null) {
-                conn.close();
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null,"Database is not connect.");
-            }
         }
         return data;
     }

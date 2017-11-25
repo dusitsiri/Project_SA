@@ -3,6 +3,8 @@ package controllers;
 import Harbor.PortIn;
 import database.DBMemberOfShip;
 import database.DatabaseHarbor;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,11 +16,12 @@ import models.MembersOfShip;
 import javax.swing.*;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class ControllerRecordPortIn {
     Stage stage;
-    DBMemberOfShip dbMemberOfShip = new DBMemberOfShip();
     int countAddMembers = 0;
     LocalDate datePortIn,birthDate;
     @FXML private TableView<MembersOfShip> membersOfShipTableView;
@@ -27,6 +30,8 @@ public class ControllerRecordPortIn {
             ,quantityOfProductTextField;
     @FXML private RadioButton maleRadioBtn,femaleRadioBtn;
     @FXML private DatePicker datePortInPicker,birthdayPicker;
+    DBMemberOfShip dbMemberOfShip = new DBMemberOfShip();
+    ObservableList<MembersOfShip> membersList = FXCollections.observableArrayList();
 
     //init
     public void initialize(){
@@ -36,8 +41,6 @@ public class ControllerRecordPortIn {
         birthdayPicker.setOnAction((ActionEvent event) ->{
             birthDate = birthdayPicker.getValue();
         });
-        System.out.println(datePortIn);
-        System.out.println(birthDate);
     }
 
     //Scenario : Add ship
@@ -58,6 +61,9 @@ public class ControllerRecordPortIn {
         String position =  positionTextField.getText();
         String gender = checkGender();
         String birthday = birthDate.toString();
+        membersList.add(new MembersOfShip(number,numberOfMembers,name,position,gender,birthday));
+        membersOfShipTableView.setItems(membersList);
+
     }
     public int setNumberOfMembers(int countAddMembers){
         int numberOfMembers = 0;
