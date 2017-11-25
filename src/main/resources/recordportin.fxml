@@ -18,7 +18,7 @@
    <content>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2600.0" prefWidth="1000.0" stylesheets="@pipo.css">
          <children>
-            <Button onAction="#OnActionbtnLogOut" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="163.0" text="ออกจากระบบ" />
+            <Button onAction="#OnActionbtnLogOut" fx:id="btnLongOut" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="163.0" text="ออกจากระบบ" />
             <Label layoutX="253.0" layoutY="34.0" prefHeight="77.0" prefWidth="624.0" text="             บันทึกการแจ้งเรือเข้า">
                <font>
                   <Font size="46.0" />

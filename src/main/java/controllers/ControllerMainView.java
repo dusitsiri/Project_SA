@@ -43,6 +43,7 @@ public class ControllerMainView {
         setStage(event);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../reportpipodaily.fxml"));
         stage.setScene(new Scene(loader.load()));
+
         stage.show();
     }
 
