@@ -103,7 +103,7 @@ public class DBMemberOfShip {
                 ResultSet resultSet = statement.executeQuery(query);
                 minNumberOfPipoReport = resultSet.getInt(1);
                 connection.close();
-                return  minNumberOfPipoReport;
+                return  minNumberOfPipoReport+1;
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

@@ -14,6 +14,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.ToggleGroup?>
 <ScrollPane prefHeight="2600.0" prefWidth="1048.0" stylesheets="@recordportin.css" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerRecordPortIn">
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2602.0" prefWidth="1048.0">
@@ -67,16 +69,42 @@
                         <TextField fx:id="typeOfShip" maxWidth="-Infinity" prefHeight="35.0" prefWidth="228.0" promptText="ประเภทเรือ" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                     </children>
                 </GridPane>
+
                 <TableView fx:id="membersOfShipTableView" layoutX="188.0" layoutY="655.0" prefHeight="342.0" prefWidth="748.0">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="ลำดับ" />
-                        <TableColumn prefWidth="89.0" text="เลขใบ PIPO" />
-                        <TableColumn prefWidth="274.0" text="ชื่อ" />
-                        <TableColumn prefWidth="87.0" text="ตำแหน่ง" />
-                        <TableColumn prefWidth="147.0" text="เพศ" />
-                  <TableColumn prefWidth="75.0" text="วันเกิด" />
+                        <TableColumn prefWidth="75.0" text="ลำดับ">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="number" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="89.0" text="เลขใบ PIPO">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="nopipo" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="274.0" text="ชื่อ">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="87.0" text="ตำแหน่ง">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="position" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="147.0" text="เพศ">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="gender" />
+                            </cellValueFactory>
+                        </TableColumn>
+                  <TableColumn prefWidth="75.0" text="วันเกิด">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="birthday" />
+                      </cellValueFactory>
+                  </TableColumn>
                     </columns>
                 </TableView>
+
                 <GridPane layoutX="180.0" layoutY="1033.0" prefHeight="268.0" prefWidth="674.0">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="410.0" minWidth="10.0" prefWidth="143.0" />
@@ -104,7 +132,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <RadioButton fx:id="maleRadioBtn" mnemonicParsing="false" text="ชาย" />
+                        <RadioButton fx:id="maleRadioBtn" mnemonicParsing="false" text="ชาย"/>
                         <RadioButton fx:id="femaleRadioBtn" mnemonicParsing="false" text="หญิง" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>

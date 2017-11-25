@@ -2,15 +2,15 @@ package models;
 
 public class MembersOfShip {
     private int number;
-    private int numberOfPipoReport;
+    private int nopipo;
     private String name;
     private String position;
     private String gender;
     private String birthday;
 
-    public MembersOfShip(int number, int numberOfPipoReport, String name, String position, String gender, String birthday) {
+    public MembersOfShip(int number, int nopipo, String name, String position, String gender, String birthday) {
         this.number = number;
-        this.numberOfPipoReport = numberOfPipoReport;
+        this.nopipo = nopipo;
         this.name = name;
         this.position = position;
         this.gender = gender;
@@ -21,16 +21,16 @@ public class MembersOfShip {
         return number;
     }
 
-    public int getNumberOfPipoReport() {
-        return numberOfPipoReport;
-    }
-
-    public String getPosition() {
-        return position;
+    public int getNopipo() {
+        return nopipo;
     }
 
     public String getName() {
         return name;
+    }
+
+    public String getPosition() {
+        return position;
     }
 
     public String getGender() {
@@ -45,15 +45,15 @@ public class MembersOfShip {
         this.number = number;
     }
 
-    public void setNumberOfPipoReport(int numberOfPipoReport) {
-        this.numberOfPipoReport = numberOfPipoReport;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
+    public void setNopipo(int nopipo) {
+        this.nopipo = nopipo;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 }

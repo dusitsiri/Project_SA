@@ -22,7 +22,8 @@ import java.util.Optional;
 
 public class ControllerRecordPortIn {
     Stage stage;
-    int countAddMembers = 0;
+    int countNumberMember = 0;
+    int countNumberOfPipo = 0;
     LocalDate datePortIn,birthDate;
     @FXML private TableView<MembersOfShip> membersOfShipTableView;
     @FXML private TextField numberOfShipTextField,nameOfShipTextField,hoursTextField,minutesTextField,
@@ -41,6 +42,12 @@ public class ControllerRecordPortIn {
         birthdayPicker.setOnAction((ActionEvent event) ->{
             birthDate = birthdayPicker.getValue();
         });
+        maleRadioBtn.setOnAction((ActionEvent event) ->{
+
+        });
+        femaleRadioBtn.setOnAction((ActionEvent event) ->{
+
+        });
     }
 
     //Scenario : Add ship
@@ -55,26 +62,31 @@ public class ControllerRecordPortIn {
 
     //Sccenario : Add members
     public void clickAddMember(){
-        int number = dbMemberOfShip.getCreateNumber();
-        int numberOfMembers = setNumberOfMembers(countAddMembers);
+        int number = setNumber(countNumberMember);
+        int numberOfMembers = setNumberOfMembers(countNumberOfPipo);
         String name = nameOfMemberTextField.getText();
         String position =  positionTextField.getText();
         String gender = checkGender();
         String birthday = birthDate.toString();
+        System.out.println(numberOfMembers);
         membersList.add(new MembersOfShip(number,numberOfMembers,name,position,gender,birthday));
         membersOfShipTableView.setItems(membersList);
+//        ObservableList listMembers = FXCollections.observableArrayList();
 
+//        for (MembersOfShip members : membersOfShipTableView.getItems()){
+//            listMembers.add()
+//            membersOfShipTableView.setItems(membersList);
+//        }
+        System.out.println(membersOfShipTableView.getItems());
     }
-    public int setNumberOfMembers(int countAddMembers){
-        int numberOfMembers = 0;
-        if (countAddMembers == 0){
-            numberOfMembers = dbMemberOfShip.getCreateNumberOfPipoReport();
-            countAddMembers++;
-        }
-        else {
-            numberOfMembers = membersOfShipTableView.getSelectionModel().getSelectedItem().getNumberOfPipoReport();
-        }
-        return numberOfMembers;
+
+    public int setNumber(int countNumberMember){
+        int numberMember = membersOfShipTableView.getSelectionModel().getFocusedIndex();
+        return numberMember;
+    }
+    public int setNumberOfMembers(int countNumberOfPipo){
+        int numberPipo = membersOfShipTableView.getSelectionModel().getSelectedItem().getNopipo();
+        return numberPipo;
     }
     public String checkGender(){
         String gender = "";
