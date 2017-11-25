@@ -110,7 +110,7 @@
                   </GridPane>
                     </children>
                 </GridPane>
-                <Button fx:id="btnLongOut1" layoutX="353.0" layoutY="1117.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="328.0" text="เพิ่มสมาชิก" />
+                <Button onAction="#clickAddMember" layoutX="353.0" layoutY="1117.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="328.0" text="เพิ่มสมาชิก" />
                 <TableView layoutX="189.0" layoutY="1223.0" prefHeight="455.0" prefWidth="674.0">
                     <columns>
                         <TableColumn prefWidth="47.0" text="ลำดับ" />
