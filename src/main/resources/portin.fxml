@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane prefHeight="2600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane prefHeight="2600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <content>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2600.0" prefWidth="1000.0" stylesheets="@pipo.css">
          <children>
@@ -84,15 +84,6 @@
                   </GridPane>
                </children>
             </GridPane>
-             <TableView layoutX="205.0" layoutY="769.0" prefHeight="302.0" prefWidth="371.0">
-                 <columns>
-                     <TableColumn prefWidth="75.0" text="ลำดับ" />
-                     <TableColumn prefWidth="75.0" text="ชื่อ" />
-                     <TableColumn prefWidth="75.0" text="ตำแหน่ง" />
-                     <TableColumn prefWidth="75.0" text="เพศ" />
-                     <TableColumn prefWidth="75.0" text="วันเกิด" />
-                 </columns>
-             </TableView>
              <GridPane layoutX="242.0" layoutY="1104.0" prefHeight="258.0" prefWidth="297.0">
                  <columnConstraints>
                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="91.0" />
@@ -144,6 +135,16 @@
                  </children>
              </GridPane>
              <Button fx:id="btnLongOut11" layoutX="309.0" layoutY="2370.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="163.0" text="เพิ่มสินค้า" />
+            <TableView layoutX="180.0" layoutY="806.0" prefHeight="298.0" prefWidth="451.0">
+               <columns>
+                  <TableColumn prefWidth="52.0" text="ลำดับ" />
+                  <TableColumn prefWidth="90.0" text="เลขใบ PIPO" />
+                  <TableColumn prefWidth="95.0" text="ชื่อ" />
+                  <TableColumn prefWidth="63.0" text="ตำแหน่ง" />
+                  <TableColumn prefWidth="75.0" text="เพศ" />
+                  <TableColumn prefWidth="75.0" text="วันเกิด" />
+               </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </content>
