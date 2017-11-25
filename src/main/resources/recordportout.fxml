@@ -15,7 +15,7 @@
 
 <ScrollPane fx:controller="controllers.ControllerRecordPortOut" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <content>
-      <AnchorPane prefHeight="2983.0" prefWidth="1600.0" stylesheets="@pipo.css">
+      <AnchorPane prefHeight="2600.0" prefWidth="1000.0" stylesheets="@pipo.css">
          <children>
             <Button fx:id="btnLongOut" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="163.0" text="ออกจากระบบ" />
             <GridPane layoutX="181.0" layoutY="171.0" prefHeight="409.0" prefWidth="459.0">
@@ -62,11 +62,12 @@
                   <TextField fx:id="portInTypeShip" prefHeight="35.0" prefWidth="190.0" promptText="ประเภทเรือ" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                </children>
             </GridPane>
-            <TableView layoutX="205.0" layoutY="802.0" prefHeight="302.0" prefWidth="371.0">
+            <TableView layoutX="205.0" layoutY="802.0" prefHeight="298.0" prefWidth="451.0">
                <columns>
-                  <TableColumn prefWidth="75.0" text="ลำดับ" />
-                  <TableColumn prefWidth="75.0" text="ชื่อ" />
-                  <TableColumn prefWidth="75.0" text="ตำแหน่ง" />
+                  <TableColumn prefWidth="52.0" text="ลำดับ" />
+                  <TableColumn prefWidth="90.0" text="เลขใบ PIPO" />
+                  <TableColumn prefWidth="95.0" text="ชื่อ" />
+                  <TableColumn prefWidth="63.0" text="ตำแหน่ง" />
                   <TableColumn prefWidth="75.0" text="เพศ" />
                   <TableColumn prefWidth="75.0" text="วันเกิด" />
                </columns>
@@ -93,8 +94,8 @@
                   <Label text="วันเกิด" GridPane.rowIndex="3" />
                </children>
             </GridPane>
-            <Button fx:id="btnLongOut1" layoutX="309.0" layoutY="1406.0" mnemonicParsing="false"  prefHeight="77.0" prefWidth="163.0" text="เพิ่มสมาชิก" />
-            <TableView layoutX="225.0" layoutY="1813.0" prefHeight="302.0" prefWidth="371.0">
+            <Button fx:id="btnLongOut1" layoutX="309.0" layoutY="1406.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="163.0" text="เพิ่มสมาชิก" />
+            <TableView layoutX="232.0" layoutY="1813.0" prefHeight="302.0" prefWidth="371.0">
                <columns>
                   <TableColumn prefWidth="47.0" text="ลำดับ" />
                   <TableColumn prefWidth="126.0" text="ชื่อ" />
