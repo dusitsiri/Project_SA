@@ -20,7 +20,7 @@ public class ControllerRecordPortIn {
     Stage stage;
     DBMemberOfShip dbMemberOfShip = new DBMemberOfShip();
     int countAddMembers = 0;
-    LocalDate datePortIn,birthdate;
+    LocalDate datePortIn,birthDate;
     @FXML private TableView<MembersOfShip> membersOfShipTableView;
     @FXML private TextField numberOfShipTextField,nameOfShipTextField,hoursTextField,minutesTextField,
             typeOfShip,nameOfMemberTextField,positionTextField,nameOfProductTextField,typeOfProductTextField
@@ -34,10 +34,10 @@ public class ControllerRecordPortIn {
             datePortIn = datePortInPicker.getValue();
         });
         birthdayPicker.setOnAction((ActionEvent event) ->{
-            birthdate = birthdayPicker.getValue();
+            birthDate = birthdayPicker.getValue();
         });
         System.out.println(datePortIn);
-        System.out.println(birthdate);
+        System.out.println(birthDate);
     }
 
     //Scenario : Add ship
@@ -57,7 +57,7 @@ public class ControllerRecordPortIn {
         String name = nameOfMemberTextField.getText();
         String position =  positionTextField.getText();
         String gender = checkGender();
-        String birthday = birthdate.toString();
+        String birthday = birthDate.toString();
     }
     public int setNumberOfMembers(int countAddMembers){
         int numberOfMembers = 0;

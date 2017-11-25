@@ -14,11 +14,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ControllerRecordPortOut {
-
     Stage stage;
     DBMemberOfShip dbMemberOfShip = new DBMemberOfShip();
     int countAddMembers = 0;
-    LocalDate dateportOut,birthdate;
+    LocalDate datePortOut,birthDate;
     @FXML private TableView<MembersOfShip> membersOfShipTableView;
     @FXML private TextField numberOfShipTextField,nameOfShipTextField,hoursTextField,minutesTextField,
             typeOfShip,nameTextField,positionOfMemberTextField;
@@ -28,20 +27,20 @@ public class ControllerRecordPortOut {
     //init
     public void initialize(){
         dateportOutPicker.setOnAction((ActionEvent event) ->{
-            dateportOut = dateportOutPicker.getValue();
+            datePortOut = dateportOutPicker.getValue();
         });
-        dateportOutPicker.setOnAction((ActionEvent event) ->{
-            dateportOut = dateportOutPicker.getValue();
+        birthdayPicker.setOnAction((ActionEvent event) ->{
+            birthDate = birthdayPicker.getValue();
         });
-        System.out.println(dateportOut);
-        System.out.println(birthdate);
+        System.out.println(datePortOut);
+        System.out.println(birthDate);
     }
 
     //Scenario : Add ship
     public void addShip(){
         int numberShip = Integer.parseInt(numberOfShipTextField.getText());
         String nameShip = nameOfShipTextField.getText();
-        String datePI = dateportOut.toString();
+        String datePI = datePortOut.toString();
         String time = hoursTextField.getText()+":"+minutesTextField.getText();
         String typeShip = typeOfShip.getText();
         System.out.print(nameShip);
@@ -64,7 +63,7 @@ public class ControllerRecordPortOut {
         System.out.println("numberofmember+"+numberOfMembers );
 
         System.out.println("position+"+position);
-        System.out.println("dateofpick+"+dateportOut);
+        System.out.println("dateofpick+"+datePortOut);
 //        System.out.println(gender);
 //        System.out.println(birthday);
 //        dbMemberOfShip.addMembersToDB(number, numberOfMembers, name, position, gender, birthday);
