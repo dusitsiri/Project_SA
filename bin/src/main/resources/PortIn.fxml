@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerPortIn">
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerRecordPortIn">
    <children>
       <TableView fx:id="tablePortIn" layoutX="750.0" layoutY="119.0" prefHeight="581.0" prefWidth="820.0">
         <columns>
@@ -66,13 +66,6 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
-         <children>
-            <Button fx:id="btnPortIn" mnemonicParsing="false" onAction="#onActionbtnPortIn" prefHeight="71.0" prefWidth="264.0" text="แจ้งเรือเข้า" />
-            <Button fx:id="btnEditProduct" mnemonicParsing="false" onAction="#onActionbtnEditProduct" prefHeight="71.0" prefWidth="266.0" text="แก้ไขรายการสินค้า" GridPane.rowIndex="1" />
-            <Button fx:id="btnPortOut" mnemonicParsing="false" onAction="#onActionbtnPortOut" prefHeight="74.0" prefWidth="240.0" text="แจ้งเรือออก" GridPane.rowIndex="2" />
-            <Button fx:id="btnRePort" mnemonicParsing="false" onAction="#onActionbtnRePort" prefHeight="96.0" prefWidth="276.0" text="รายงานผล" GridPane.rowIndex="3" />
-            <Button fx:id="btnPrintPipo" mnemonicParsing="false" onAction="#onActionbtnPrintPipo" prefHeight="92.0" prefWidth="190.0" text="พิมพ์ใบ PIPO" GridPane.rowIndex="4" />
-         </children>
       </GridPane>
       <Pagination layoutX="529.0" layoutY="807.0" prefHeight="56.0" prefWidth="585.0" />
       <GridPane layoutX="251.0" layoutY="167.0" prefHeight="472.0" prefWidth="98.0">
@@ -109,7 +102,7 @@
             <Font size="46.0" />
          </font>
       </Label>
-      <Button fx:id="btnLongOut" layoutX="23.0" layoutY="796.0" mnemonicParsing="false" onAction="#OnActionbtnLongOut" prefHeight="77.0" prefWidth="144.0" text="ออกจากระบบ" />
+      <Button fx:id="btnLongOut" layoutX="23.0" layoutY="796.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="144.0" text="ออกจากระบบ" />
       <DatePicker fx:id="portInDate" layoutX="373.0" layoutY="174.0" prefHeight="35.0" prefWidth="235.0" />
       <Label layoutX="438.0" layoutY="240.0" prefHeight="48.0" prefWidth="13.0" text=" :">
          <font>

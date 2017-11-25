@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class ControllerLogin {
-    @FXML private TextField passwordTextField;
+    @FXML private PasswordField passwordField;
     @FXML private Label passwordLabel;
     @FXML private Button staffButton;
     @FXML private Button pipoButton;
@@ -33,7 +33,7 @@ public class ControllerLogin {
             staffButton.setMnemonicParsing(false);
 
         });
-        passwordTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
+        passwordField.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
                 if (event.getCode() == KeyCode.ENTER){
@@ -51,13 +51,13 @@ public class ControllerLogin {
 
     public void setOption(){
         showBlockInputPassword();
-        passwordTextField.setText("");
-        passwordTextField.requestFocus();
+        passwordField.setText("");
+        passwordField.requestFocus();
     }
 
     public void showBlockInputPassword(){
         passwordLabel.setVisible(true);
-        passwordTextField.setVisible(true);
+        passwordField.setVisible(true);
     }
 
     public void loginOnClick(ActionEvent event) throws IOException{
@@ -67,21 +67,21 @@ public class ControllerLogin {
     }
 
     public void checkUserAndPassword(Stage stage) throws IOException {
-        if (passwordTextField.getText().toLowerCase().equals("staff") && staffButton.isMnemonicParsing()){
+        if (passwordField.getText().toLowerCase().equals("staff") && staffButton.isMnemonicParsing()){
             loginComplete(stage);
         }
-        else if (passwordTextField.getText().toLowerCase().equals("pipo") && pipoButton.isMnemonicParsing()){
+        else if (passwordField.getText().toLowerCase().equals("pipo") && pipoButton.isMnemonicParsing()){
             loginComplete(stage);
         }
 
-        else if (staffButton.isMnemonicParsing()&& passwordTextField.getText().toLowerCase().equals("")
-                || pipoButton.isMnemonicParsing() && passwordTextField.getText().toLowerCase().equals("")) {
+        else if (staffButton.isMnemonicParsing()&& passwordField.getText().toLowerCase().equals("")
+                || pipoButton.isMnemonicParsing() && passwordField.getText().toLowerCase().equals("")) {
             Alert alert = new Alert(Alert.AlertType.WARNING, "กรุณากรอกรหัสผ่าน", ButtonType.CLOSE);
             Optional optional = alert.showAndWait();
         }
 
-        else if (staffButton.isMnemonicParsing() && !passwordTextField.getText().toLowerCase().equals("staff")
-                || pipoButton.isMnemonicParsing() && !passwordTextField.getText().toLowerCase().equals("pipo")) {
+        else if (staffButton.isMnemonicParsing() && !passwordField.getText().toLowerCase().equals("staff")
+                || pipoButton.isMnemonicParsing() && !passwordField.getText().toLowerCase().equals("pipo")) {
             Alert alert = new Alert(Alert.AlertType.WARNING, "รหัสผ่านไม่ถูกต้อง", ButtonType.CLOSE);
             Optional optional = alert.showAndWait();
         }
