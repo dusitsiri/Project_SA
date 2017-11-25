@@ -30,8 +30,6 @@ public class ControllerRecordPortIn {
         birthdayPicker.setOnAction((ActionEvent event) ->{
             birthdate = birthdayPicker.getValue();
         });
-
-        System.out.println(birthdate);
     }
     public void clickAddMember(){
         int number = dbMemberOfShip.getCreateNumber();

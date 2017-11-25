@@ -27,7 +27,6 @@ public class ControllerRecordPortOut {
             birthdate = birthdayPicker.getValue();
         });
 
-        System.out.println(birthdate);
     }
     public void clickAddMember(){
         int number = dbMemberOfShip.getCreateNumber();

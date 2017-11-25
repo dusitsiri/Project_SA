@@ -94,7 +94,7 @@
                         <RadioButton alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="21.0" prefWidth="64.0" text="หญิง" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
-                  <DatePicker promptText="วันเกิด" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <DatePicker fx:id="birthdayPicker" promptText="วันเกิด" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
             <Button layoutX="309.0" layoutY="1406.0" mnemonicParsing="false" onAction="#clickAddMember" prefHeight="77.0" prefWidth="163.0" text="เพิ่มสมาชิก" />
