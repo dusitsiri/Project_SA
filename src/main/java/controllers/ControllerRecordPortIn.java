@@ -13,7 +13,7 @@ import javax.swing.*;
 import java.io.IOException;
 import java.util.Optional;
 
-public class ControllerPortIn {
+public class ControllerRecordPortIn {
     Stage stage;
     @FXML
     TextField portInHour, portInMinute, portInShipNumber, portInTypeShip, portInNameShip, portInNameDriver, portInNumberSeaMan;
@@ -106,7 +106,7 @@ public class ControllerPortIn {
 
     public void refreshPage(ActionEvent event) throws IOException {
         setStage(event);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/portin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/recordportin.fxml"));
         stage.setScene(new Scene(loader.load()));
         stage.show();
     }

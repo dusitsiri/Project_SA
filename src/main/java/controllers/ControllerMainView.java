@@ -20,14 +20,14 @@ public class ControllerMainView {
     }
     public void recordPortIn(ActionEvent event) throws IOException{
         setStage(event);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../portin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../recordportin.fxml"));
         stage.setScene(new Scene(loader.load()));
         stage.show();
     }
 
     public void recordPortOut(ActionEvent event) throws IOException {
         setStage(event);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../portout.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../recordportout.fxml"));
         stage.setScene(new Scene(loader.load()));
         stage.show();
     }
