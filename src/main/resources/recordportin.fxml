@@ -8,13 +8,14 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane prefHeight="2600.0" prefWidth="1048.0" stylesheets="@recordportin.css" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerRecordPortIn">
+<ScrollPane prefHeight="2600.0" prefWidth="1048.0" stylesheets="@recordportin.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerRecordPortIn">
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2602.0" prefWidth="1048.0">
             <children>
@@ -104,8 +105,11 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <RadioButton fx:id="maleRadioBtn" mnemonicParsing="false" text="ชาย" />
-                        <RadioButton fx:id="femaleRadioBtn" mnemonicParsing="false" text="หญิง" GridPane.columnIndex="1" />
+                        <RadioButton fx:id="maleRadioBtn" mnemonicParsing="false" text="ชาย">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="Mygroup" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="femaleRadioBtn" mnemonicParsing="false" text="หญิง" toggleGroup="$Mygroup" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                   <DatePicker fx:id="birthdayPicker" promptText="วันเกิด" GridPane.columnIndex="1" GridPane.rowIndex="3" />
