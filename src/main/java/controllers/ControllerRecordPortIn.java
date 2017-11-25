@@ -23,7 +23,7 @@ public class ControllerRecordPortIn {
     LocalDate datePortIn,birthdate;
     @FXML private TableView<MembersOfShip> membersOfShipTableView;
     @FXML private TextField numberOfShipTextField,nameOfShipTextField,hoursTextField,minutesTextField,
-            typeOfShip,nameTextField,positionTextField,nameOfProductTextField,typeOfProductTextField
+            typeOfShip,nameOfMemberTextField,positionTextField,nameOfProductTextField,typeOfProductTextField
             ,quantityOfProductTextField;
     @FXML private RadioButton maleRadioBtn,femaleRadioBtn;
     @FXML private DatePicker datePortInPicker,birthdayPicker;
@@ -54,7 +54,7 @@ public class ControllerRecordPortIn {
     public void clickAddMember(){
         int number = dbMemberOfShip.getCreateNumber();
         int numberOfMembers = setNumberOfMembers(countAddMembers);
-        String name = nameTextField.getText();
+        String name = nameOfMemberTextField.getText();
         String position =  positionTextField.getText();
         String gender = checkGender();
         String birthday = birthdate.toString();
@@ -73,7 +73,7 @@ public class ControllerRecordPortIn {
     public String checkGender(){
         String gender = "";
         if (maleRadioBtn.isSelected()) gender = "M";
-        else gender = "F";
+        else if (femaleRadioBtn.isSelected())gender = "F";
         return gender;
     }
 
