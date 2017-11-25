@@ -79,10 +79,10 @@
                </rowConstraints>
                <children>
                   <Label text="ชื่อ" />
-                  <TextField GridPane.columnIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField promptText="ชื่อ" GridPane.columnIndex="1" />
+                  <TextField promptText="ตำแหน่ง" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField promptText="เพศ" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField promptText="วันเกิด" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Label text="ตำแหน่ง" GridPane.rowIndex="1" />
                   <Label text="เพศ" GridPane.rowIndex="2" />
                   <Label text="วันเกิด" GridPane.rowIndex="3" />
@@ -108,10 +108,10 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label text="ชื่อ" />
-                  <TextField GridPane.columnIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="ชื่อสินค้า" />
+                  <TextField promptText="ชื่อสินค้า" GridPane.columnIndex="1" />
+                  <TextField promptText="ประเภท" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField promptText="จำนวน" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Label text="ประเภท" GridPane.rowIndex="1" />
                   <Label text="จำนวน" GridPane.rowIndex="2" />
                </children>
