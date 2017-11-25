@@ -131,7 +131,7 @@
                   <Font size="46.0" />
                </font>
             </Label>
-            <TableView layoutX="185.0" layoutY="802.0" prefHeight="302.0" prefWidth="452.0">
+            <TableView layoutX="185.0" layoutY="763.0" prefHeight="302.0" prefWidth="452.0">
                <columns>
                   <TableColumn prefWidth="75.0" text="ลำดับ" />
                   <TableColumn prefWidth="91.0" text="เลขใบ PIPO" />
