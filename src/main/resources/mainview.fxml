@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="780.0" prefWidth="1048.0" stylesheets="@mainview.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerMainView">
+<AnchorPane prefHeight="780.0" prefWidth="1048.0" stylesheets="@mainview.css" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerMainView">
     <children>
       <GridPane layoutX="123.0" layoutY="48.0" prefHeight="580.0" prefWidth="810.0">
         <columnConstraints>
@@ -84,6 +84,7 @@
                       </HBox>
                   </graphic>
               </Button>
+            <Button fx:id="btnInvestigateData" onAction="#clickedInvestigateData" mnemonicParsing="false" prefHeight="152.0" prefWidth="810.0" text="ตรวจสอบข้อมูล" GridPane.rowIndex="8" />
          </children>
       </GridPane>
     </children>

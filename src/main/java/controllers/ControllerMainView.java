@@ -12,7 +12,7 @@ import java.io.IOException;
 public class ControllerMainView {
     Stage stage;
     @FXML private Button  btnRecordPortIn,btnRecordPortOut,
-            btnReportPortOutNextDay,btnReportPipoDaily;
+            btnReportPortOutNextDay,btnReportPipoDaily,btnInvestigateData;
 
     public void setStage(ActionEvent event){
         Button button = (Button) event.getSource();
@@ -43,8 +43,13 @@ public class ControllerMainView {
         setStage(event);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../reportpipodaily.fxml"));
         stage.setScene(new Scene(loader.load()));
-
         stage.show();
     }
 
+    public void clickedInvestigateData(ActionEvent event) throws IOException {
+        setStage(event);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../investigatedata.fxml"));
+        stage.setScene(new Scene(loader.load()));
+        stage.show();
+    }
 }
