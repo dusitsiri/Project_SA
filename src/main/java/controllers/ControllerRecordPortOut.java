@@ -1,6 +1,8 @@
 package controllers;
 
+import Harbor.PortIn;
 import database.DBMemberOfShip;
+import database.DatabaseHarbor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,9 +11,10 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import models.MembersOfShip;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.Optional;
 
 public class ControllerRecordPortOut {
     Stage stage;
@@ -20,14 +23,15 @@ public class ControllerRecordPortOut {
     LocalDate datePortOut,birthDate;
     @FXML private TableView<MembersOfShip> membersOfShipTableView;
     @FXML private TextField numberOfShipTextField,nameOfShipTextField,hoursTextField,minutesTextField,
-            typeOfShip,nameTextField,positionOfMemberTextField;
+            typeOfShip,nameOfMemberTextField,positionTextField,nameOfProductTextField,typeOfProductTextField
+            ,quantityOfProductTextField;
     @FXML private RadioButton maleRadioBtn,femaleRadioBtn;
-    @FXML private DatePicker dateportOutPicker,birthdayPicker;
+    @FXML private DatePicker datePortOutPicker,birthdayPicker;
 
     //init
     public void initialize(){
-        dateportOutPicker.setOnAction((ActionEvent event) ->{
-            datePortOut = dateportOutPicker.getValue();
+        datePortOutPicker.setOnAction((ActionEvent event) ->{
+            datePortOut = datePortOutPicker.getValue();
         });
         birthdayPicker.setOnAction((ActionEvent event) ->{
             birthDate = birthdayPicker.getValue();
@@ -43,30 +47,17 @@ public class ControllerRecordPortOut {
         String datePI = datePortOut.toString();
         String time = hoursTextField.getText()+":"+minutesTextField.getText();
         String typeShip = typeOfShip.getText();
-        System.out.print(nameShip);
-        System.out.println(datePI);
-        System.out.println(time);
-        System.out.println(typeShip);
     }
 
 
     //Sccenario : Add members
-    public void clickAddMember(ActionEvent event){
+    public void clickAddMember(){
         int number = dbMemberOfShip.getCreateNumber();
         int numberOfMembers = setNumberOfMembers(countAddMembers);
-        String name = nameTextField.getText();
-        System.out.println("name+"+name);
-        String position =  positionOfMemberTextField.getText();
-//        String gender = checkGender();
-//        String birthday = birthdate.toString();
-        System.out.println("number+"+number );
-        System.out.println("numberofmember+"+numberOfMembers );
-
-        System.out.println("position+"+position);
-        System.out.println("dateofpick+"+datePortOut);
-//        System.out.println(gender);
-//        System.out.println(birthday);
-//        dbMemberOfShip.addMembersToDB(number, numberOfMembers, name, position, gender, birthday);
+        String name = nameOfMemberTextField.getText();
+        String position =  positionTextField.getText();
+        String gender = checkGender();
+        String birthday = birthDate.toString();
     }
     public int setNumberOfMembers(int countAddMembers){
         int numberOfMembers = 0;
@@ -79,12 +70,21 @@ public class ControllerRecordPortOut {
         }
         return numberOfMembers;
     }
-//    public String checkGender(){
-//        String gender = "";
-//        if (maleRadioBtn.isSelected()) gender = "M";
-//        else gender = "F";
-//        return gender;
-//    }
+    public String checkGender(){
+        String gender = "";
+        if (maleRadioBtn.isSelected()) gender = "M";
+        else if (femaleRadioBtn.isSelected())gender = "F";
+        return gender;
+    }
+
+    //Scenario : Add products
+    public void clickAddProduct(){
+        String nameProduct = nameOfProductTextField.getText();
+        String typeProduct = typeOfProductTextField.getText();
+        int quantityProduct = Integer.parseInt(quantityOfProductTextField.getText());
+    }
+
+    //Scenario : Log out
     public void OnActionbtnLogOut(ActionEvent event) throws IOException {
         setStage(event);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
