@@ -90,8 +90,8 @@
                     </rowConstraints>
                     <children>
                         <Label text="ชื่อ" />
-                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="232.0" promptText="ชื่อ" GridPane.columnIndex="1" />
-                        <TextField maxWidth="-Infinity" prefHeight="31.0" prefWidth="183.0" promptText="ตำแหน่ง" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="232.0" GridPane.columnIndex="1" />
+                        <TextField maxWidth="-Infinity" prefHeight="31.0" prefWidth="183.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="ตำแหน่ง" GridPane.rowIndex="1" />
                         <Label text="เพศ" GridPane.rowIndex="2" />
                         <Label text="วันเกิด" GridPane.rowIndex="3" />
@@ -108,7 +108,7 @@
                         <RadioButton mnemonicParsing="false" text="หญิง" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
-                  <DatePicker promptText="วันเกิด" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="3" />
                     </children>
                 </GridPane>
                 <Button layoutX="353.0" layoutY="1350.0" mnemonicParsing="false" onAction="#clickAddMember" prefHeight="88.0" prefWidth="328.0" text="เพิ่มสมาชิก" />
@@ -131,10 +131,10 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <Label text="ชื่อสินค้า" />
-                        <TextField maxWidth="-Infinity" prefHeight="31.0" prefWidth="243.0" promptText="ชื่อสินค้า" GridPane.columnIndex="1" />
-                        <TextField maxWidth="-Infinity" prefHeight="31.0" prefWidth="163.0" promptText="ประเภท" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField maxWidth="-Infinity" prefHeight="31.0" prefWidth="99.0" promptText="จำนวน" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="ชื่อ" />
+                        <TextField maxWidth="-Infinity" prefHeight="31.0" prefWidth="243.0" GridPane.columnIndex="1" />
+                        <TextField maxWidth="-Infinity" prefHeight="31.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField maxWidth="-Infinity" prefHeight="31.0" prefWidth="99.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="ประเภท" GridPane.rowIndex="1" />
                         <Label text="จำนวน" GridPane.rowIndex="2" />
                     </children>
