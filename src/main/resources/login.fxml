@@ -19,7 +19,7 @@
          </font></Label>
         <Button fx:id="loginButton" layoutX="302.0" layoutY="654.0" mnemonicParsing="false" onAction="#loginOnClick" prefHeight="52.0" prefWidth="531.0" styleClass="buttonlogin" text="Login" />
 
-        <Button fx:id="staffButton" layoutX="187.0" layoutY="270.0" mnemonicParsing="false" prefHeight="198.0" prefWidth="299.0">
+        <Button styleClass="btnstaff" fx:id="staffButton" layoutX="187.0" layoutY="270.0" mnemonicParsing="false" prefHeight="198.0" prefWidth="299.0">
             <graphic>
                 <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true" prefHeight="299.0" prefWidth="312.0">
                     <children>
@@ -39,7 +39,7 @@
             </font>
         </Label>
 
-        <Button fx:id="pipoButton" layoutX="552.0" layoutY="270.0" mnemonicParsing="false" prefHeight="198.0" prefWidth="297.0">
+        <Button styleClass="btnpipo" fx:id="pipoButton" layoutX="552.0" layoutY="270.0" mnemonicParsing="false" prefHeight="198.0" prefWidth="297.0">
             <graphic>
                 <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true">
                     <children>

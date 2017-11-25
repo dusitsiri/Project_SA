@@ -61,4 +61,17 @@
     -fx-stroke: firebrick;
     -fx-stroke-width: 2px;
 }
+.btnstaff{
+    -fx-background-color : #29B6F6;
 
+}
+.btnstaff:hover{
+    -fx-background-color : #01579B;
+}
+.btnpipo{
+-fx-background-color : #29B6F6;
+
+}
+.btnpipo:hover{
+    -fx-background-color : #01579B;
+}
