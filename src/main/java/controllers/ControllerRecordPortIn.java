@@ -1,6 +1,7 @@
 package controllers;
 
 import Harbor.PortIn;
+import database.DBMemberOfShip;
 import database.DatabaseHarbor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,105 +9,62 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import models.MembersOfShip;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Optional;
 
 public class ControllerRecordPortIn {
     Stage stage;
-    @FXML
-    TextField portInHour, portInMinute, portInShipNumber, portInTypeShip, portInNameShip, portInNameDriver, portInNumberSeaMan;
-    @FXML
-    Button btnLongOut,btnDelete,btnDeleteAll;
-    @FXML
-    DatePicker portInDate;
-    @FXML
-    TableView<PortIn> tablePortIn;
+    DBMemberOfShip dbMemberOfShip = new DBMemberOfShip();
+    int countAddMembers = 0;
+    LocalDate birthdate;
+    @FXML private TableView<MembersOfShip> membersOfShipTableView;
+    @FXML private TextField nameTextField,positionTextField;
+    @FXML private RadioButton maleRadioBtn,femaleRadioBtn;
+    @FXML private DatePicker birthdayPicker;
 
-    DatabaseHarbor databaseHarbor = new DatabaseHarbor();
-//    ArrayList<PortIn> library = new ArrayList<>();
-//    int row = 1;
+    public void initialize(){
+        birthdayPicker.setOnAction((ActionEvent event) ->{
+            birthdate = birthdayPicker.getValue();
+        });
 
+        System.out.println(birthdate);
+    }
+    public void clickAddMember(){
+        int number = dbMemberOfShip.getCreateNumber();
+        int numberOfMembers = setNumberOfMembers(countAddMembers);
+        String name = nameTextField.getText();
+        String position =  positionTextField.getText();
+        String gender = checkGender();
+        String birthday = birthdate.toString();
+        dbMemberOfShip.addMembersToDB(number, numberOfMembers, name, position, gender, birthday);
+    }
 
-//    public void initialize() throws SQLException {
-//        tablePortIn.setItems(databaseHarbor.loadDatabase());
-//
-//    }
-
-    public void onActionbtnPortIn(ActionEvent event) {
-        String type = portInTypeShip.getText();
-        String hour = portInHour.getText();
-        String minute = portInMinute.getText();
-        String nameDriver  = portInNameDriver.getText();
-
-        String nameShip = portInNameShip.getText();
-        String numberSeaMan = portInNumberSeaMan.getText();
-        String numberShip = portInShipNumber.getText();
-        String date = portInDate.getEditor().getText();
-        if (type.equals("") || hour.equals("") || minute.equals("") || nameDriver.equals("") || nameShip.equals("") || numberSeaMan.equals("")||numberShip.equals("") || date.equals(""))
-        {
-            JOptionPane.showMessageDialog(null,"Please fill in the blank.");
+    public int setNumberOfMembers(int countAddMembers){
+        int numberOfMembers = 0;
+        if (countAddMembers == 0){
+            numberOfMembers = dbMemberOfShip.getCreateNumberOfPipoReport();
+            countAddMembers++;
         }
         else {
-            PortIn portIn = new PortIn(date, hour + ":" + minute, numberShip, type, nameShip, nameDriver, Integer.parseInt(numberSeaMan));
-            this.addToLibrary(portIn);
-
-//        tablePortIn.edit;
+            numberOfMembers = membersOfShipTableView.getSelectionModel().getSelectedItem().getNumberOfPipoReport();
         }
-    }
-    public void addToLibrary(PortIn portIn)
-    {
-//        library.add(portIn);
-        try {
-            databaseHarbor.saveDatabase(portIn.getDatePortIn(), portIn.getTimePortIn(), portIn.getShipNumber(), portIn.getTypeShip(), portIn.getNameShip(), portIn.getNameDriver(), portIn.getNumberOfSeaman());
-            tablePortIn.setItems(databaseHarbor.loadDatabase());
-
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
-//        columnDate.setCellValueFactory(new PropertyValueFactory<>(portIn.getDatePortIn()));
-
+        return numberOfMembers;
     }
 
-
-//    public ArrayList<PortIn> getLibrary() {
-//        return library;
-//    }
-    public void onActionbtnDeleteProduct(ActionEvent event) throws IOException {
-        if (tablePortIn.getSelectionModel().getSelectedItem() != null && event.getSource().equals(btnDelete)){
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to delete " + tablePortIn.getSelectionModel().getSelectedItem().getNameShip() + "?",
-                    ButtonType.OK, ButtonType.CANCEL);
-            Optional optional = alert.showAndWait();
-            if (optional.get() == ButtonType.OK){
-                databaseHarbor.deleteDatabase(tablePortIn.getSelectionModel().getSelectedItem().getShipNumber());
-                this.refreshPage(event);
-            }
-        }
-        else if (tablePortIn.getSelectionModel().getSelectedItem() == null && event.getSource().equals(btnDeleteAll)){
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to delete all information?",
-                    ButtonType.OK, ButtonType.CANCEL);
-            Optional optional = alert.showAndWait();
-            if (optional.get() == ButtonType.OK){
-                databaseHarbor.deleteAllDatabase();
-                this.refreshPage(event);
-            }
-        }
+    public String checkGender(){
+        String gender = "";
+        if (maleRadioBtn.isSelected()) gender = "M";
+        else gender = "F";
+        return gender;
     }
 
     public void OnActionbtnLogOut(ActionEvent event) throws IOException {
         setStage(event);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
-        stage.setScene(new Scene(loader.load()));
-        stage.show();
-    }
-
-    public void refreshPage(ActionEvent event) throws IOException {
-        setStage(event);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/recordportin.fxml"));
         stage.setScene(new Scene(loader.load()));
         stage.show();
     }

@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -13,17 +14,17 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane prefHeight="780.0" prefWidth="1048.0" stylesheets="@recordportin.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerRecordPortIn">
+<ScrollPane fx:controller="controllers.ControllerRecordPortIn" prefHeight="2600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
    <content>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2100.0" prefWidth="1048.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2600.0" prefWidth="1000.0" stylesheets="@pipo.css">
          <children>
-            <Button fx:id="btnLongOut" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnActionbtnLogOut" prefHeight="77.0" prefWidth="163.0" text="ออกจากระบบ" />
+            <Button onAction="#OnActionbtnLogOut" fx:id="btnLongOut" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="163.0" text="ออกจากระบบ" />
             <Label layoutX="253.0" layoutY="34.0" prefHeight="77.0" prefWidth="624.0" text="             บันทึกการแจ้งเรือเข้า">
                <font>
                   <Font size="46.0" />
                </font>
             </Label>
-            <GridPane layoutX="191.0" layoutY="169.0" prefHeight="299.0" prefWidth="673.0">
+            <GridPane layoutX="191.0" layoutY="206.0" prefHeight="346.0" prefWidth="584.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="207.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="442.0" minWidth="10.0" prefWidth="404.0" />
@@ -31,6 +32,7 @@
                <rowConstraints>
                   <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="68.0" minHeight="1.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
@@ -66,19 +68,19 @@
                   <TextField fx:id="portInTypeShip" maxWidth="-Infinity" prefHeight="35.0" prefWidth="228.0" promptText="ประเภทเรือ" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                </children>
             </GridPane>
-             <TableView layoutX="190.0" layoutY="501.0" prefHeight="345.0" prefWidth="673.0">
+             <TableView layoutX="205.0" layoutY="769.0" prefHeight="302.0" prefWidth="371.0">
                  <columns>
                      <TableColumn prefWidth="75.0" text="ลำดับ" />
-                     <TableColumn prefWidth="266.0" text="ชื่อ" />
-                     <TableColumn prefWidth="97.0" text="ตำแหน่ง" />
-                     <TableColumn prefWidth="87.0" text="เพศ" />
-                     <TableColumn prefWidth="147.0" text="วันเกิด" />
+                     <TableColumn prefWidth="75.0" text="ชื่อ" />
+                     <TableColumn prefWidth="75.0" text="ตำแหน่ง" />
+                     <TableColumn prefWidth="75.0" text="เพศ" />
+                     <TableColumn prefWidth="75.0" text="วันเกิด" />
                  </columns>
              </TableView>
-             <GridPane layoutX="189.0" layoutY="849.0" prefHeight="268.0" prefWidth="674.0">
+             <GridPane layoutX="242.0" layoutY="1104.0" prefHeight="258.0" prefWidth="297.0">
                  <columnConstraints>
-                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="410.0" minWidth="10.0" prefWidth="143.0" />
-                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="530.0" minWidth="0.0" prefWidth="521.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="91.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="231.0" />
                  </columnConstraints>
                  <rowConstraints>
                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -97,19 +99,19 @@
                      <Label text="วันเกิด" GridPane.rowIndex="3" />
                  </children>
              </GridPane>
-             <Button fx:id="btnLongOut1" layoutX="353.0" layoutY="1117.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="328.0" text="เพิ่มสมาชิก" />
-             <TableView layoutX="189.0" layoutY="1223.0" prefHeight="455.0" prefWidth="674.0">
+             <Button fx:id="btnLongOut1" layoutX="309.0" layoutY="1406.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="163.0" text="เพิ่มสมาชิก" />
+             <TableView layoutX="220.0" layoutY="1795.0" prefHeight="302.0" prefWidth="371.0">
                  <columns>
                      <TableColumn prefWidth="47.0" text="ลำดับ" />
-                     <TableColumn prefWidth="305.0" text="ชื่อ" />
-                     <TableColumn prefWidth="178.0" text="ประเภท" />
-                     <TableColumn prefWidth="143.0" text="จำนวน" />
+                     <TableColumn prefWidth="126.0" text="ชื่อ" />
+                     <TableColumn prefWidth="87.0" text="ประเภท" />
+                     <TableColumn prefWidth="110.0" text="จำนวน" />
                  </columns>
              </TableView>
-             <GridPane layoutX="187.0" layoutY="1684.0" prefHeight="210.0" prefWidth="679.0">
+             <GridPane layoutX="242.0" layoutY="2115.0" prefHeight="201.0" prefWidth="297.0">
                  <columnConstraints>
-                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="410.0" minWidth="10.0" prefWidth="140.0" />
-                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="524.0" minWidth="0.0" prefWidth="524.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="91.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="231.0" />
                  </columnConstraints>
                  <rowConstraints>
                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -125,7 +127,7 @@
                      <Label text="จำนวน" GridPane.rowIndex="2" />
                  </children>
              </GridPane>
-             <Button fx:id="btnLongOut11" layoutX="352.0" layoutY="1894.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="330.0" text="เพิ่มสินค้า" />
+             <Button fx:id="btnLongOut11" layoutX="309.0" layoutY="2370.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="163.0" text="เพิ่มสินค้า" />
          </children>
       </AnchorPane>
    </content>
