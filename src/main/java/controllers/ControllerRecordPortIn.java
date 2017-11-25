@@ -20,17 +20,36 @@ public class ControllerRecordPortIn {
     Stage stage;
     DBMemberOfShip dbMemberOfShip = new DBMemberOfShip();
     int countAddMembers = 0;
-    LocalDate birthdate;
+    LocalDate datePortIn,birthdate;
     @FXML private TableView<MembersOfShip> membersOfShipTableView;
-    @FXML private TextField nameTextField,positionTextField;
+    @FXML private TextField numberOfShipTextField,nameOfShipTextField,hoursTextField,minutesTextField,
+            typeOfShip,nameTextField,positionTextField;
     @FXML private RadioButton maleRadioBtn,femaleRadioBtn;
-    @FXML private DatePicker birthdayPicker;
+    @FXML private DatePicker datePortInPicker,birthdayPicker;
 
+    //init
     public void initialize(){
+        datePortInPicker.setOnAction((ActionEvent event) ->{
+            datePortIn = datePortInPicker.getValue();
+        });
         birthdayPicker.setOnAction((ActionEvent event) ->{
             birthdate = birthdayPicker.getValue();
         });
+        System.out.println(datePortIn);
+        System.out.println(birthdate);
     }
+
+    //Scenario : Add ship
+    public void addShip(){
+        int numberShip = Integer.parseInt(numberOfShipTextField.getText());
+        String nameShip = nameOfShipTextField.getText();
+        String datePI = datePortIn.toString();
+        String time = hoursTextField.getText()+":"+minutesTextField.getText();
+        String typeShip = typeOfShip.getText();
+    }
+
+
+    //Sccenario : Add members
     public void clickAddMember(){
         int number = dbMemberOfShip.getCreateNumber();
         int numberOfMembers = setNumberOfMembers(countAddMembers);
@@ -40,7 +59,6 @@ public class ControllerRecordPortIn {
         String birthday = birthdate.toString();
         dbMemberOfShip.addMembersToDB(number, numberOfMembers, name, position, gender, birthday);
     }
-
     public int setNumberOfMembers(int countAddMembers){
         int numberOfMembers = 0;
         if (countAddMembers == 0){
@@ -52,21 +70,18 @@ public class ControllerRecordPortIn {
         }
         return numberOfMembers;
     }
-
     public String checkGender(){
         String gender = "";
         if (maleRadioBtn.isSelected()) gender = "M";
         else gender = "F";
         return gender;
     }
-
     public void OnActionbtnLogOut(ActionEvent event) throws IOException {
         setStage(event);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
         stage.setScene(new Scene(loader.load()));
         stage.show();
     }
-
     public void setStage(ActionEvent event){
         Button button = (Button) event.getSource();
         stage = (Stage) button.getScene().getWindow();
