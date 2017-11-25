@@ -1,0 +1,43 @@
+.scroll-pane {
+    -fx-background-color: #87CEEB;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: white;
+    -fx-background-radius: 5em;
+}
+.scroll-pane > .viewport {
+ -fx-background-image: url("seapi.png");
+        -fx-background-size: 1048px 780px;}
+.button {
+    -fx-text-fill:white;
+    -fx-padding: 15 30 15 30;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-color : #29B6F6;
+    -fx-text-fill        : #E1F5FE;
+    -fx-font-weight      : 900;
+    }
+
+.button:hover {
+    -fx-background-color : #01579B;
+
+    }
