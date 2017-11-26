@@ -84,6 +84,11 @@ public class ControllerRecordPortOut {
         int quantityProduct = Integer.parseInt(quantityOfProductTextField.getText());
     }
 
+    //Scenario : Research ship
+    public void searchShip(){
+
+    }
+
     //Scenario : Log out
     public void OnActionbtnLogOut(ActionEvent event) throws IOException {
         setStage(event);

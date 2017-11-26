@@ -108,6 +108,8 @@ public class ControllerRecordPortIn {
         int quantityProduct = Integer.parseInt(quantityOfProductTextField.getText());
     }
 
+
+
     //Scenario : Log out
     public void OnActionbtnLogOut(ActionEvent event) throws IOException {
         setStage(event);
