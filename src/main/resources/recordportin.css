@@ -40,4 +40,30 @@
 .button:hover {
     -fx-background-color : #01579B;
 
-    }
+}
+.btncancle{
+    -fx-text-fill:white;
+    -fx-padding: 15 30 15 30;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-color : #ff6699;
+    -fx-text-fill        : #E1F5FE;
+    -fx-font-weight      : 900;
+}
+.btncancle:hover{
+    -fx-background-color : #cc0033;
+}
+.btnsubmitportin{
+-fx-text-fill:white;
+    -fx-padding: 15 30 15 30;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-color : #00ee00;
+    -fx-text-fill        : #E1F5FE;
+    -fx-font-weight      : 900;
+}
+.btnsubmitportin:hover{
+-fx-background-color : #00bb00;
+}

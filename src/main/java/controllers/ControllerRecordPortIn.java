@@ -120,4 +120,14 @@ public class ControllerRecordPortIn {
         Button button = (Button) event.getSource();
         stage = (Stage) button.getScene().getWindow();
     }
+
+    public void canclePortIn(ActionEvent event) throws IOException {
+        setStage(event);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mainview.fxml"));
+        stage.setScene(new Scene(loader.load()));
+        stage.show();
+    }
+
+    public void savePortIn(ActionEvent event) {
+    }
 }
