@@ -15,17 +15,17 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane prefHeight="780.0" prefWidth="1048.0" stylesheets="@recordportin.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerRecordPortOut">
+<ScrollPane prefHeight="780.0" prefWidth="1048.0" stylesheets="@recordportin.css" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerRecordPortOut">
    <content>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2602.0" prefWidth="1048.0">
          <children>
             <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnActionbtnLogOut" prefHeight="77.0" prefWidth="163.0" text="ออกจากระบบ" />
-            <Label layoutX="253.0" layoutY="34.0" prefHeight="77.0" prefWidth="624.0" text="             บันทึกการแจ้งเรือเข้า">
+            <Label layoutX="216.0" layoutY="38.0" prefHeight="77.0" prefWidth="624.0" text="             บันทึกการแจ้งเรือเข้า">
                <font>
                   <Font size="46.0" />
                </font>
             </Label>
-            <GridPane layoutX="191.0" layoutY="169.0" prefHeight="299.0" prefWidth="673.0">
+            <GridPane layoutX="188.0" layoutY="274.0" prefHeight="299.0" prefWidth="673.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="207.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="442.0" minWidth="10.0" prefWidth="404.0" />
@@ -144,6 +144,19 @@
                </children>
             </GridPane>
             <Button fx:id="btnLongOut11" layoutX="352.0" layoutY="2374.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="330.0" text="เพิ่มสินค้า" />
+            <GridPane layoutX="255.0" layoutY="202.0" prefHeight="48.0" prefWidth="366.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="246.0" minWidth="10.0" prefWidth="169.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.0" minWidth="10.0" prefWidth="197.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField prefHeight="38.0" prefWidth="197.0" promptText="หมายเลขเรือ" GridPane.columnIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="57.0" prefWidth="169.0" text="ค้นหาเรือ" />
+               </children>
+            </GridPane>
          </children>
       </AnchorPane>
    </content>
