@@ -22,81 +22,87 @@ import java.util.Optional;
 
 public class ControllerRecordPortIn {
     Stage stage;
-    int countNumberMember = 0;
-    int countNumberOfPipo = 0;
-    LocalDate datePortIn,birthDate;
-    @FXML private TableView<MembersOfShip> membersOfShipTableView;
-    @FXML private TextField numberOfShipTextField,nameOfShipTextField,hoursTextField,minutesTextField,
-            typeOfShip,nameOfMemberTextField,positionTextField,nameOfProductTextField,typeOfProductTextField
-            ,quantityOfProductTextField;
-    @FXML private RadioButton maleRadioBtn,femaleRadioBtn;
-    @FXML private DatePicker datePortInPicker,birthdayPicker;
+    private int countNumberMember = 1;
+    private int countNumberOfPipo = 0;
+    LocalDate datePortIn, birthDate;
+    @FXML
+    private TableView<MembersOfShip> membersOfShipTableView;
+    @FXML
+    private TextField numberOfShipTextField, nameOfShipTextField, hoursTextField, minutesTextField,
+            typeOfShip, nameOfMemberTextField, positionTextField, nameOfProductTextField, typeOfProductTextField, quantityOfProductTextField;
+    @FXML
+    private RadioButton maleRadioBtn, femaleRadioBtn;
+    @FXML
+    private DatePicker datePortInPicker, birthdayPicker;
     DBMemberOfShip dbMemberOfShip = new DBMemberOfShip();
     ObservableList<MembersOfShip> membersList = FXCollections.observableArrayList();
 
     //init
-    public void initialize(){
-        datePortInPicker.setOnAction((ActionEvent event) ->{
+    public void initialize() {
+        datePortInPicker.setOnAction((ActionEvent event) -> {
             datePortIn = datePortInPicker.getValue();
         });
-        birthdayPicker.setOnAction((ActionEvent event) ->{
+        birthdayPicker.setOnAction((ActionEvent event) -> {
             birthDate = birthdayPicker.getValue();
         });
-        maleRadioBtn.setOnAction((ActionEvent event) ->{
+        maleRadioBtn.setOnAction((ActionEvent event) -> {
 
         });
-        femaleRadioBtn.setOnAction((ActionEvent event) ->{
+        femaleRadioBtn.setOnAction((ActionEvent event) -> {
 
         });
     }
 
     //Scenario : Add ship
-    public void addShip(){
+    public void addShip() {
         int numberShip = Integer.parseInt(numberOfShipTextField.getText());
         String nameShip = nameOfShipTextField.getText();
         String datePI = datePortIn.toString();
-        String time = hoursTextField.getText()+":"+minutesTextField.getText();
+        String time = hoursTextField.getText() + ":" + minutesTextField.getText();
         String typeShip = typeOfShip.getText();
     }
 
 
     //Sccenario : Add members
-    public void clickAddMember(){
+    public void clickAddMember() {
         int number = setNumber(countNumberMember);
-        int numberOfMembers = setNumberOfMembers(countNumberOfPipo);
+        int numberOfMembers = 1;
         String name = nameOfMemberTextField.getText();
-        String position =  positionTextField.getText();
+        String position = positionTextField.getText();
         String gender = checkGender();
         String birthday = birthDate.toString();
-        System.out.println(numberOfMembers);
-        membersList.add(new MembersOfShip(number,numberOfMembers,name,position,gender,birthday));
+        membersList.add(new MembersOfShip(number, numberOfMembers, name, position, gender, birthday));
         membersOfShipTableView.setItems(membersList);
-//        ObservableList listMembers = FXCollections.observableArrayList();
-
-//        for (MembersOfShip members : membersOfShipTableView.getItems()){
-//            listMembers.add()
-//            membersOfShipTableView.setItems(membersList);
-//        }
-        System.out.println(membersOfShipTableView.getItems());
+        int row = membersList.size() - 1;
+        membersOfShipTableView.getSelectionModel().select(row);
+        membersOfShipTableView.getFocusModel().focus(row);
     }
 
-    public int setNumber(int countNumberMember){
-        int numberMember = membersOfShipTableView.getSelectionModel().getFocusedIndex();
-        return numberMember;
+    public void setCountNumberMember(int countNumberMember){
+        this.countNumberMember = countNumberMember+1;
     }
-    public int setNumberOfMembers(int countNumberOfPipo){
-        int numberPipo = membersOfShipTableView.getSelectionModel().getSelectedItem().getNopipo();
-        return numberPipo;
+
+    public int setNumber(int countNumberMember) {
+        if (membersOfShipTableView.getSelectionModel().getSelectedItem() != null) {
+            setCountNumberMember(countNumberMember);
+            return countNumberMember+1;
+        }
+        return countNumberMember;
     }
-    public String checkGender(){
+
+    //    public int setNumberOfMembers(int countNumberOfPipo){
+//        int numberPipo = membersOfShipTableView.getSelectionModel().getSelectedItem().getNopipo();
+//        return numberPipo;
+//    }
+    public String checkGender() {
         String gender = "";
         if (maleRadioBtn.isSelected()) gender = "M";
-        else if (femaleRadioBtn.isSelected())gender = "F";
+        else if (femaleRadioBtn.isSelected()) gender = "F";
         return gender;
     }
 
     //Scenario : Add products
-    public void clickAddProduct(){
+    public void clickAddProduct() {
         String nameProduct = nameOfProductTextField.getText();
         String typeProduct = typeOfProductTextField.getText();
         int quantityProduct = Integer.parseInt(quantityOfProductTextField.getText());
@@ -109,7 +115,8 @@ public class ControllerRecordPortIn {
         stage.setScene(new Scene(loader.load()));
         stage.show();
     }
-    public void setStage(ActionEvent event){
+
+    public void setStage(ActionEvent event) {
         Button button = (Button) event.getSource();
         stage = (Stage) button.getScene().getWindow();
     }
