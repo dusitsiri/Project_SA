@@ -25,15 +25,11 @@ public class ControllerRecordPortIn {
     private int countNumberMember = 1;
     private int countNumberOfPipo = 0;
     LocalDate datePortIn, birthDate;
-    @FXML
-    private TableView<MembersOfShip> membersOfShipTableView;
-    @FXML
-    private TextField numberOfShipTextField, nameOfShipTextField, hoursTextField, minutesTextField,
+    @FXML private TableView<MembersOfShip> membersOfShipTableView;
+    @FXML private TextField numberOfShipTextField, nameOfShipTextField, hoursTextField, minutesTextField,
             typeOfShip, nameOfMemberTextField, positionTextField, nameOfProductTextField, typeOfProductTextField, quantityOfProductTextField;
-    @FXML
-    private RadioButton maleRadioBtn, femaleRadioBtn;
-    @FXML
-    private DatePicker datePortInPicker, birthdayPicker;
+    @FXML private RadioButton maleRadioBtn, femaleRadioBtn;
+    @FXML private DatePicker datePortInPicker, birthdayPicker;
     DBMemberOfShip dbMemberOfShip = new DBMemberOfShip();
     ObservableList<MembersOfShip> membersList = FXCollections.observableArrayList();
 
