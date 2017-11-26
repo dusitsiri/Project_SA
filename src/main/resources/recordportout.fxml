@@ -20,7 +20,7 @@
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2602.0" prefWidth="1048.0">
          <children>
             <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnActionbtnLogOut" prefHeight="77.0" prefWidth="163.0" text="ออกจากระบบ" />
-            <Label layoutX="253.0" layoutY="34.0" prefHeight="77.0" prefWidth="624.0" text="             บันทึกการแจ้งเรือเข้า">
+            <Label layoutX="253.0" layoutY="34.0" prefHeight="77.0" prefWidth="624.0" text="             บันทึกการแจ้งเรือออก">
                <font>
                   <Font size="46.0" />
                </font>
@@ -143,6 +143,9 @@
                   <Label text="จำนวน" GridPane.rowIndex="2" />
                </children>
             </GridPane>
+
+            <Button layoutX="240.0" layoutY="2488.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="256.0" text="ยกเลิก" styleClass="btncancle" onAction="#canclePortOut"/>
+            <Button layoutX="544.0" layoutY="2486.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="260.0" text="บันทึกการแจ้งเรือเข้า" styleClass="btnsubmitportin" onAction="#savePortOut"/>
             <Button fx:id="btnLongOut11" layoutX="352.0" layoutY="2374.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="330.0" text="เพิ่มสินค้า" />
          </children>
       </AnchorPane>

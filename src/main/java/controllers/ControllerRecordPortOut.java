@@ -114,7 +114,7 @@ public class ControllerRecordPortOut {
         stage = (Stage) button.getScene().getWindow();
     }
 
-    public void canclePortOut(ActionEvent event) throws IOException {
+    public void cancelPortOut(ActionEvent event) throws IOException {
         setStage(event);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/mainview.fxml"));
         stage.setScene(new Scene(loader.load()));
