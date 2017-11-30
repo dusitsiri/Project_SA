@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane prefHeight="780.0" prefWidth="1048.0" stylesheets="@recordportin.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerRecordPortIn">
+<ScrollPane prefHeight="780.0" prefWidth="1048.0" stylesheets="@recordportin.css" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerRecordPortIn">
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2602.0" prefWidth="1048.0">
             <children>
@@ -39,12 +39,12 @@
                         <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <DatePicker fx:id="datePortInPicker" prefHeight="35.0" prefWidth="232.0" promptText="เลือกวันที่เรือแจ้งเข้า" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label prefHeight="35.0" prefWidth="83.0" text="วันที่แจ้งเข้า" textOverrun="CLIP" GridPane.rowIndex="2" />
                         <Label prefHeight="97.0" prefWidth="260.0" text="เลขเรือ" />
                         <Label prefHeight="52.0" prefWidth="188.0" text="ชื่อเรือ" GridPane.rowIndex="1" />
-                        <TextField fx:id="nameOfShipTextField" maxWidth="-Infinity" prefHeight="35.0" prefWidth="232.0" promptText="ชื่อเรือ" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="numberOfShipTextField" maxWidth="-Infinity" prefHeight="35.0" prefWidth="144.0" promptText="เลขเรือ" GridPane.columnIndex="1" />
+                        <TextField fx:id="nameOfShipTextField" maxWidth="-Infinity" prefHeight="35.0" prefWidth="232.0" promptText="ชื่อเรือ" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="datePortInPicker" prefHeight="35.0" prefWidth="232.0" promptText="เลือกวันที่เรือแจ้งเข้า" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <GridPane alignment="CENTER" prefHeight="102.0" prefWidth="531.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="65.0" />
@@ -71,32 +71,32 @@
                 </GridPane>
                 <TableView fx:id="membersOfShipTableView" layoutX="188.0" layoutY="655.0" prefHeight="342.0" prefWidth="748.0">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="ลำดับ">
+                        <TableColumn prefWidth="56.0" text="ลำดับ">
                             <cellValueFactory>
                                 <PropertyValueFactory property="number" />
                             </cellValueFactory>
                         </TableColumn>
-                        <TableColumn prefWidth="89.0" text="เลขใบ PIPO">
+                        <TableColumn prefWidth="108.0" text="เลขใบ PIPO">
                             <cellValueFactory>
                                 <PropertyValueFactory property="nopipo" />
                             </cellValueFactory>
                         </TableColumn>
-                        <TableColumn prefWidth="274.0" text="ชื่อ">
+                        <TableColumn prefWidth="264.0" text="ชื่อ">
                             <cellValueFactory>
                                 <PropertyValueFactory property="name" />
                             </cellValueFactory>
                         </TableColumn>
-                        <TableColumn prefWidth="87.0" text="ตำแหน่ง">
+                        <TableColumn prefWidth="91.0" text="ตำแหน่ง">
                             <cellValueFactory>
                                 <PropertyValueFactory property="position" />
                             </cellValueFactory>
                         </TableColumn>
-                        <TableColumn prefWidth="147.0" text="เพศ">
+                        <TableColumn prefWidth="83.0" text="เพศ">
                             <cellValueFactory>
                                 <PropertyValueFactory property="gender" />
                             </cellValueFactory>
                         </TableColumn>
-                  <TableColumn prefWidth="75.0" text="วันเกิด">
+                  <TableColumn prefWidth="145.0" text="วันเกิด">
                       <cellValueFactory>
                           <PropertyValueFactory property="birthday" />
                       </cellValueFactory>
@@ -141,12 +141,33 @@
                     </children>
                 </GridPane>
                 <Button layoutX="353.0" layoutY="1350.0" mnemonicParsing="false" onAction="#clickAddMember" prefHeight="88.0" prefWidth="328.0" text="เพิ่มสมาชิก" />
-                <TableView layoutX="194.0" layoutY="1617.0" prefHeight="455.0" prefWidth="674.0">
+                <TableView fx:id="productsTableView" layoutX="194.0" layoutY="1617.0" prefHeight="455.0" prefWidth="674.0">
                     <columns>
-                        <TableColumn prefWidth="47.0" text="ลำดับ" />
-                        <TableColumn prefWidth="305.0" text="ชื่อ" />
-                        <TableColumn prefWidth="178.0" text="ประเภท" />
-                        <TableColumn prefWidth="143.0" text="จำนวน" />
+                        <TableColumn prefWidth="60.0" text="ลำดับ">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="no" />
+                        </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="118.0" text="เลขใบ PIPO">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="nopipo" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="180.0" text="ชื่อสินค้า">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="nameproduct" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn minWidth="0.0" prefWidth="184.0" text="ประเภทสินค้า">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="typeproduct" />
+                            </cellValueFactory>
+                        </TableColumn>
+                  <TableColumn prefWidth="131.0" text="จำนวนสินค้า">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="qtyproduct" />
+                     </cellValueFactory>
+                  </TableColumn>
                     </columns>
                 </TableView>
                 <GridPane layoutX="192.0" layoutY="2127.0" prefHeight="210.0" prefWidth="679.0">
@@ -165,12 +186,13 @@
                         <TextField fx:id="typeOfProductTextField" maxWidth="-Infinity" prefHeight="31.0" prefWidth="163.0" promptText="ประเภทสินค้า" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="quantityOfProductTextField" maxWidth="-Infinity" prefHeight="31.0" prefWidth="99.0" promptText="จำนวน" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="ประเภทสินค้า" GridPane.rowIndex="1" />
-                        <Label text="จำนวน" GridPane.rowIndex="2" />
+                        <Label text="จำนวนสินค้า" GridPane.rowIndex="2" />
                     </children>
                 </GridPane>
-                <Button fx:id="btnLongOut11" layoutX="352.0" layoutY="2374.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="330.0" text="เพิ่มสินค้า" />
-            <Button layoutX="240.0" layoutY="2488.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="256.0" text="ยกเลิก" styleClass="btncancle" onAction="#canclePortIn"/>
-            <Button layoutX="544.0" layoutY="2486.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="260.0" text="บันทึกการแจ้งเรือเข้า" styleClass="btnsubmitportin" onAction="#savePortIn"/>
+                <Button layoutX="352.0" layoutY="2374.0" mnemonicParsing="false" onAction="#clickAddProduct" prefHeight="86.0" prefWidth="330.0" text="เพิ่มสินค้า" />
+            <Button layoutX="125.0" layoutY="2488.0" mnemonicParsing="false" onAction="#cancelPortIn" prefHeight="77.0" prefWidth="256.0" styleClass="btncancle" text="ยกเลิก" />
+            <Button fx:id="submitBtn" layoutX="402.0" layoutY="2486.0" mnemonicParsing="false" onAction="#savePortIn" prefHeight="81.0" prefWidth="260.0" styleClass="btnsubmitportin" text="บันทึกการแจ้งเรือเข้า" />
+            <Button onAction="#editData" layoutX="672.0" layoutY="2487.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="219.0" text="แก้ไขข้อมูล" />
             </children>
         </AnchorPane>
     </content>

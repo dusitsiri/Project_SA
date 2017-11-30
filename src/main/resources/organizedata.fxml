@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="780.0" prefWidth="1048.0" stylesheets="@portoutnextday.css" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerOrganizeData">
+   <children>
+      <Button layoutX="40.0" layoutY="86.0" mnemonicParsing="false" onAction="#searchPipoNumber" prefHeight="41.0" prefWidth="134.0" text="ค้นหา" />
+      <TextField fx:id="pipoNumberTextField" layoutX="40.0" layoutY="34.0" prefHeight="41.0" prefWidth="134.0" promptText="เลขใบ PIPO" />
+      <Label alignment="CENTER" layoutX="407.0" layoutY="58.0" prefHeight="66.0" prefWidth="293.0" text="ค้นหาเลข PIPO">
+         <font>
+            <Font size="45.0" />
+         </font></Label>
+       <TableView fx:id="shipsTableView" layoutX="112.0" layoutY="185.0" prefHeight="449.0" prefWidth="824.0">
+           <columns>
+               <TableColumn prefWidth="99.0" text="เลขใบ PIPO">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="nopipo" />
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn prefWidth="57.0" text="PI/PO">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="pipo" />
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn minWidth="0.0" prefWidth="102.0" text="ID">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="noship" />
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn minWidth="9.0" prefWidth="165.0" text="Name Ship">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="nameship" />
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn minWidth="1.0" prefWidth="133.0" text="Type">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="typeship" />
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn prefWidth="144.0" text="Date">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="date" />
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn prefWidth="123.0" text="Time">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="time" />
+                   </cellValueFactory>
+               </TableColumn>
+           </columns>
+       </TableView>
+       <Button layoutX="36.0" layoutY="664.0" mnemonicParsing="false" onAction="#backToMainView" prefHeight="103.0" prefWidth="221.0" text="ย้อนกลับ" />
+      <Button layoutX="715.0" layoutY="664.0" mnemonicParsing="false" onAction="#deleteShip" prefHeight="103.0" prefWidth="221.0" text="ลบข้อมูล" />
+   </children>
+</AnchorPane>

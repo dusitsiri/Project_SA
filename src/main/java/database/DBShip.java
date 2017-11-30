@@ -2,20 +2,19 @@ package database;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import models.MembersOfShip;
+import models.Ships;
 
-import javax.swing.*;
 import java.sql.*;
 
-public class DBMemberOfShip {
+public class DBShip {
 
-    public ObservableList<MembersOfShip> loadDBMembers(){
-        ObservableList<MembersOfShip> data = FXCollections.observableArrayList();
-        Connection conn=null;
+    public ObservableList<Ships> loadDBShips() {
+        ObservableList<Ships> data = FXCollections.observableArrayList();
+        Connection conn = null;
         try {
             //setup
             Class.forName("org.sqlite.JDBC");
-            String dbURL = "jdbc:sqlite:DBMembers.db";
+            String dbURL = "jdbc:sqlite:DBShip.db";
             conn = DriverManager.getConnection(dbURL);
             if (conn != null) {
                 System.out.println("Connected to the database....");
@@ -25,17 +24,18 @@ public class DBMemberOfShip {
                 System.out.println("Product name: " + dm.getDatabaseProductName());
                 //execute SQL statements
                 System.out.println("----- Data in Book table -----");
-                String query = "select * from members";
+                String query = "select * from ships";
                 Statement statement = conn.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()) {
-                    int number = resultSet.getInt(1);
-                    int numberOfPipoReport = resultSet.getInt(2);
-                    String name = resultSet.getString(3);
-                    String position = resultSet.getString(4);
-                    String gender = resultSet.getString(5);
-                    String birthday = resultSet.getString(6);
-                    data.add(new MembersOfShip(number, numberOfPipoReport, name, position, gender, birthday));
+                    int nopipo = resultSet.getInt(1);
+                    String pipo = resultSet.getString(2);
+                    String noship = resultSet.getString(3);
+                    String nameship = resultSet.getString(4);
+                    String typeship = resultSet.getString(5);
+                    String date = resultSet.getString(6);
+                    String time = resultSet.getString(7);
+                    data.add(new Ships(nopipo, pipo, noship, nameship, typeship, date, time));
                 }
                 //close connection
 
@@ -48,34 +48,18 @@ public class DBMemberOfShip {
         return data;
     }
 
-    public void addMembersToDB(int number, int nopipo, String name, String position, String gender, String birthday){
-        try{
-            Class.forName("org.sqlite.JDBC");
-            String dbURL = "jdbc:sqlite:DBMembers.db";
-            Connection connection = DriverManager.getConnection(dbURL);
-            if (connection != null){
-                String query = "insert into members(number, nopipo, name, " +
-                        "position, gender, birthday) values " +
-                        "(\'" +number+ "\', \'" +nopipo+ "\', \'" +name+ "\'," +
-                        "\'" +position+ "\', \'" +gender+ "\', \'" +birthday+ "')";
-                PreparedStatement p = connection.prepareStatement(query);
-                p.executeUpdate();
-                connection.close();
-            }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void deleteMemberInDB(int nopipo) {
+    public void addShipToDB(int nopipo, String pipo, String noship, String nameship,
+                            String typeship, String date, String time) {
         try {
             Class.forName("org.sqlite.JDBC");
-            String dbURL = "jdbc:sqlite:DBMembers.db";
+            String dbURL = "jdbc:sqlite:DBShip.db";
             Connection connection = DriverManager.getConnection(dbURL);
             if (connection != null) {
-                String query = "Delete from members where nopipo == \'" + nopipo + "\'";
+                String query = "insert into ships(nopipo, pipo, noship, " +
+                        "nameship, typeship, date, time) values " +
+                        "(\'" + nopipo + "\', \'" + pipo + "\', \'" + noship + "\'," +
+                        "\'" + nameship + "\', \'" + typeship + "\', \'" + date + "\', " +
+                        "\'" + time + "')";
                 PreparedStatement p = connection.prepareStatement(query);
                 p.executeUpdate();
                 connection.close();
@@ -87,19 +71,19 @@ public class DBMemberOfShip {
         }
     }
 
-    public int getCreateNumber(){
+    public int getCreateNoPipo() {
         int minNumber = 0;
-        try{
+        try {
             Class.forName("org.sqlite.JDBC");
-            String dbURL = "jdbc:sqlite:DBMembers.db";
+            String dbURL = "jdbc:sqlite:DBShip.db";
             Connection connection = DriverManager.getConnection(dbURL);
-            if (connection != null){
-                String query = "Select max(number) from members";
+            if (connection != null) {
+                String query = "Select max(nopipo) from ships";
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
                 minNumber = resultSet.getInt(1);
                 connection.close();
-                return  minNumber+1;
+                return minNumber + 1;
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -107,6 +91,24 @@ public class DBMemberOfShip {
             e.printStackTrace();
         }
         return minNumber;
+    }
+
+    public void deleteShipInDB(int nopipo) {
+        try {
+            Class.forName("org.sqlite.JDBC");
+            String dbURL = "jdbc:sqlite:DBShip.db";
+            Connection connection = DriverManager.getConnection(dbURL);
+            if (connection != null) {
+                String query = "Delete from ships where nopipo == \'" + nopipo + "\'";
+                PreparedStatement p = connection.prepareStatement(query);
+                p.executeUpdate();
+                connection.close();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

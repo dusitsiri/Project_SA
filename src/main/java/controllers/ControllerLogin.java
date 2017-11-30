@@ -26,19 +26,23 @@ public class ControllerLogin {
             setOption();
             staffButton.setMnemonicParsing(true);
             pipoButton.setMnemonicParsing(false);
+            staffButton.setDisable(true);
+            pipoButton.setDisable(false);
         });
         pipoButton.setOnMouseClicked((MouseEvent e) -> {
             setOption();
             pipoButton.setMnemonicParsing(true);
             staffButton.setMnemonicParsing(false);
+            pipoButton.setDisable(true);
+            staffButton.setDisable(false);
 
         });
         passwordField.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
                 if (event.getCode() == KeyCode.ENTER){
-                    TextField textField = (TextField) event.getSource();
-                    Stage stage = (Stage) textField.getScene().getWindow();
+                    PasswordField passwordField = (PasswordField) event.getSource();
+                    Stage stage = (Stage) passwordField.getScene().getWindow();
                     try {
                         checkUserAndPassword(stage);
                     } catch (IOException e) {
@@ -92,6 +96,8 @@ public class ControllerLogin {
     }
 
     public void loginComplete(Stage stage) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "รหัสผ่านถูกต้อง", ButtonType.OK);
+        Optional optional = alert.showAndWait();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../mainview.fxml"));
         stage.setScene(new Scene(loader.load()));
         stage.show();

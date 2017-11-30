@@ -84,7 +84,7 @@
                       </HBox>
                   </graphic>
               </Button>
-            <Button fx:id="btnInvestigateData" onAction="#clickedInvestigateData" mnemonicParsing="false" prefHeight="152.0" prefWidth="810.0" text="ตรวจสอบข้อมูล" GridPane.rowIndex="8" />
+            <Button fx:id="btnOrganizeData" onAction="#clickedOrganizeData" mnemonicParsing="false" prefHeight="152.0" prefWidth="810.0" text="จัดการข้อมูล" GridPane.rowIndex="8" />
          </children>
       </GridPane>
     </children>

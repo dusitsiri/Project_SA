@@ -13,11 +13,11 @@
 <AnchorPane prefHeight="780.0" prefWidth="1048.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerLogin">
     <children>
         <PasswordField fx:id="passwordField" layoutX="444.0" layoutY="577.0" prefHeight="60.0" prefWidth="396.0" promptText="Password" visible="false" />
-        <Label fx:id="passwordLabel" layoutX="302.0" layoutY="575.0" prefHeight="60.0" prefWidth="125.0" styleClass="labelpassword" text="Password :" visible="false">
+        <Label fx:id="passwordLabel" layoutX="302.0" layoutY="575.0" prefHeight="60.0" prefWidth="125.0" styleClass="labelpassword" text="รหัสผ่าน:" visible="false">
          <font>
             <Font size="21.0" />
          </font></Label>
-        <Button fx:id="loginButton" layoutX="302.0" layoutY="654.0" mnemonicParsing="false" onAction="#loginOnClick" prefHeight="52.0" prefWidth="531.0" styleClass="buttonlogin" text="Login" />
+        <Button fx:id="loginButton" layoutX="302.0" layoutY="654.0" mnemonicParsing="false" onAction="#loginOnClick" prefHeight="52.0" prefWidth="531.0" styleClass="buttonlogin" text="เข้าสู่ระบบ" />
 
         <Button styleClass="btnstaff" fx:id="staffButton" layoutX="187.0" layoutY="270.0" mnemonicParsing="false" prefHeight="198.0" prefWidth="299.0">
             <graphic>
