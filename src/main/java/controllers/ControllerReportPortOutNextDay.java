@@ -26,19 +26,19 @@ public class ControllerReportPortOutNextDay {
     ObservableList<Ships> setShip = FXCollections.observableArrayList();
     Calendar calendar = Calendar.getInstance();
 
-    public void initialize(){
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH)+1;
-        int date = calendar.get(Calendar.DATE)+1;
-        LocalDate now = LocalDate.of(year, month, date);
-        for (Ships ships: loadShip){
-            if (ships.getPipo().equals("PO") && ships.getDate().equals(now.toString())){
-                setShip.add(new Ships(ships.getNopipo(),ships.getPipo(),ships.getNoship(),
-                        ships.getNameship(),ships.getTypeship(),ships.getDate(),ships.getTime()));
-            }
-        }
-        shipsNextDayTableView.setItems(setShip);
-    }
+//    public void initialize(){
+//        int year = calendar.get(Calendar.YEAR);
+//        int month = calendar.get(Calendar.MONTH)+1;
+//        int date = calendar.get(Calendar.DATE)+1;
+//        LocalDate now = LocalDate.of(year, month, date);
+//        for (Ships ships: loadShip){
+//            if (ships.getPipo().equals("PO") && ships.getDate().equals(now.toString())){
+//                setShip.add(new Ships(ships.getNopipo(),ships.getPipo(),ships.getNoship(),
+//                        ships.getNameship(),ships.getTypeship(),ships.getDate(),ships.getTime()));
+//            }
+//        }
+//        shipsNextDayTableView.setItems(setShip);
+//    }
 
     public void backToMainView(ActionEvent event) throws IOException {
         Button button = (Button) event.getSource();

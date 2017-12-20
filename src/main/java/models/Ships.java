@@ -6,15 +6,22 @@ public class Ships {
     private String noship;
     private String nameship;
     private String typeship;
+    private int sizeShip;
     private String date;
     private String time;
 
-    public Ships(int nopipo, String pipo, String noship, String nameship, String typeship, String date, String time) {
+    public Ships(int nopipo, String noship, String nameship, String typeship, int sizeShip) {
         this.nopipo = nopipo;
-        this.pipo = pipo;
         this.noship = noship;
         this.nameship = nameship;
         this.typeship = typeship;
+        this.sizeShip = sizeShip;
+    }
+
+    public Ships(int nopipo, String pipo, String noship, String date, String time){
+        this.nopipo = nopipo;
+        this.pipo = pipo;
+        this.noship = noship;
         this.date = date;
         this.time = time;
     }

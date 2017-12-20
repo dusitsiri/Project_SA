@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="780.0" prefWidth="1048.0" stylesheets="@recordportin.css" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ControllerRecordShipPortIn">
+    <children>
+        <Label layoutX="189.0" layoutY="42.0" prefHeight="77.0" prefWidth="624.0" text="             บันทึกการแจ้งเรือเข้า">
+            <font>
+                <Font size="46.0" />
+            </font>
+        </Label>
+        <GridPane layoutX="220.0" layoutY="190.0" prefHeight="292.0" prefWidth="670.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="207.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="442.0" minWidth="10.0" prefWidth="404.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="68.0" minHeight="1.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label prefHeight="35.0" prefWidth="83.0" text="เลขเรือ" textOverrun="CLIP" GridPane.rowIndex="2" />
+                <Label prefHeight="97.0" prefWidth="260.0" text="วันที่เรือแจ้งเข้า" />
+                <Label prefHeight="52.0" prefWidth="188.0" text="เวลา" GridPane.rowIndex="1" />
+                <DatePicker fx:id="datePortInPicker" prefHeight="35.0" prefWidth="232.0" promptText="เลือกวันที่" GridPane.columnIndex="1" />
+                <GridPane alignment="CENTER" prefHeight="102.0" prefWidth="531.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="84.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="52.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="346.0" minWidth="10.0" prefWidth="299.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label prefHeight="48.0" prefWidth="44.0" text="   :" GridPane.columnIndex="1">
+                            <font>
+                                <Font size="25.0" />
+                            </font>
+                        </Label>
+                        <MenuButton fx:id="hoursMenu" mnemonicParsing="false" text="00">
+                            <items>
+                                <MenuItem fx:id="h00" mnemonicParsing="false" onAction="#chooseHours" text="00" />
+                                <MenuItem fx:id="h01" mnemonicParsing="false" onAction="#chooseHours" text="01" />
+                                <MenuItem fx:id="h02" mnemonicParsing="false" onAction="#chooseHours" text="02" />
+                                <MenuItem fx:id="h03" mnemonicParsing="false" onAction="#chooseHours" text="03" />
+                                <MenuItem fx:id="h04" mnemonicParsing="false" onAction="#chooseHours" text="04" />
+                                <MenuItem fx:id="h05" mnemonicParsing="false" onAction="#chooseHours" text="05" />
+                                <MenuItem fx:id="h06" mnemonicParsing="false" onAction="#chooseHours" text="06" />
+                                <MenuItem fx:id="h07" mnemonicParsing="false" onAction="#chooseHours" text="07" />
+                                <MenuItem fx:id="h08" mnemonicParsing="false" onAction="#chooseHours" text="08" />
+                                <MenuItem fx:id="h09" mnemonicParsing="false" onAction="#chooseHours" text="09" />
+                                <MenuItem fx:id="h10" mnemonicParsing="false" onAction="#chooseHours" text="10" />
+                                <MenuItem fx:id="h11" mnemonicParsing="false" onAction="#chooseHours" text="11" />
+                                <MenuItem fx:id="h12" mnemonicParsing="false" onAction="#chooseHours" text="12" />
+                                <MenuItem fx:id="h13" mnemonicParsing="false" onAction="#chooseHours" text="13" />
+                                <MenuItem fx:id="h14" mnemonicParsing="false" onAction="#chooseHours" text="14" />
+                                <MenuItem fx:id="h15" mnemonicParsing="false" onAction="#chooseHours" text="15" />
+                                <MenuItem fx:id="h16" mnemonicParsing="false" onAction="#chooseHours" text="16" />
+                                <MenuItem fx:id="h17" mnemonicParsing="false" onAction="#chooseHours" text="17" />
+                                <MenuItem fx:id="h18" mnemonicParsing="false" onAction="#chooseHours" text="18" />
+                                <MenuItem fx:id="h19" mnemonicParsing="false" onAction="#chooseHours" text="19" />
+                                <MenuItem fx:id="h20" mnemonicParsing="false" onAction="#chooseHours" text="20" />
+                                <MenuItem fx:id="h21" mnemonicParsing="false" onAction="#chooseHours" text="21" />
+                                <MenuItem fx:id="h22" mnemonicParsing="false" onAction="#chooseHours" text="22" />
+                                <MenuItem fx:id="h23" mnemonicParsing="false" onAction="#chooseHours" text="23" />
+                            </items>
+                        </MenuButton>
+                        <MenuButton fx:id="minutesMenu" mnemonicParsing="false" text="00" GridPane.columnIndex="2">
+                            <items>
+                                <MenuItem fx:id="m00" mnemonicParsing="false" onAction="#chooseMinutes" text="00" />
+                                <MenuItem fx:id="m01" mnemonicParsing="false" onAction="#chooseMinutes" text="01" />
+                                <MenuItem fx:id="m02" mnemonicParsing="false" onAction="#chooseMinutes" text="02" />
+                                <MenuItem fx:id="m03" mnemonicParsing="false" onAction="#chooseMinutes" text="03" />
+                                <MenuItem fx:id="m04" mnemonicParsing="false" onAction="#chooseMinutes" text="04" />
+                                <MenuItem fx:id="m05" mnemonicParsing="false" onAction="#chooseMinutes" text="05" />
+                                <MenuItem fx:id="m06" mnemonicParsing="false" onAction="#chooseMinutes" text="06" />
+                                <MenuItem fx:id="m07" mnemonicParsing="false" onAction="#chooseMinutes" text="07" />
+                                <MenuItem fx:id="m08" mnemonicParsing="false" onAction="#chooseMinutes" text="08" />
+                                <MenuItem fx:id="m09" mnemonicParsing="false" onAction="#chooseMinutes" text="09" />
+                                <MenuItem fx:id="m10" mnemonicParsing="false" onAction="#chooseMinutes" text="10" />
+                                <MenuItem fx:id="m11" mnemonicParsing="false" onAction="#chooseMinutes" text="11" />
+                                <MenuItem fx:id="m12" mnemonicParsing="false" onAction="#chooseMinutes" text="12" />
+                                <MenuItem fx:id="m13" mnemonicParsing="false" onAction="#chooseMinutes" text="13" />
+                                <MenuItem fx:id="m14" mnemonicParsing="false" onAction="#chooseMinutes" text="14" />
+                                <MenuItem fx:id="m15" mnemonicParsing="false" onAction="#chooseMinutes" text="15" />
+                                <MenuItem fx:id="m16" mnemonicParsing="false" onAction="#chooseMinutes" text="16" />
+                                <MenuItem fx:id="m17" mnemonicParsing="false" onAction="#chooseMinutes" text="17" />
+                                <MenuItem fx:id="m18" mnemonicParsing="false" onAction="#chooseMinutes" text="18" />
+                                <MenuItem fx:id="m19" mnemonicParsing="false" onAction="#chooseMinutes" text="19" />
+                                <MenuItem fx:id="m20" mnemonicParsing="false" onAction="#chooseMinutes" text="20" />
+                                <MenuItem fx:id="m21" mnemonicParsing="false" onAction="#chooseMinutes" text="21" />
+                                <MenuItem fx:id="m22" mnemonicParsing="false" onAction="#chooseMinutes" text="22" />
+                                <MenuItem fx:id="m23" mnemonicParsing="false" onAction="#chooseMinutes" text="23" />
+                                <MenuItem fx:id="m24" mnemonicParsing="false" onAction="#chooseMinutes" text="24" />
+                                <MenuItem fx:id="m25" mnemonicParsing="false" onAction="#chooseMinutes" text="25" />
+                                <MenuItem fx:id="m26" mnemonicParsing="false" onAction="#chooseMinutes" text="26" />
+                                <MenuItem fx:id="m27" mnemonicParsing="false" onAction="#chooseMinutes" text="27" />
+                                <MenuItem fx:id="m28" mnemonicParsing="false" onAction="#chooseMinutes" text="28" />
+                                <MenuItem fx:id="m29" mnemonicParsing="false" onAction="#chooseMinutes" text="29" />
+                                <MenuItem fx:id="m30" mnemonicParsing="false" onAction="#chooseMinutes" text="30" />
+                                <MenuItem fx:id="m31" mnemonicParsing="false" onAction="#chooseMinutes" text="31" />
+                                <MenuItem fx:id="m32" mnemonicParsing="false" onAction="#chooseMinutes" text="32" />
+                                <MenuItem fx:id="m33" mnemonicParsing="false" onAction="#chooseMinutes" text="33" />
+                                <MenuItem fx:id="m34" mnemonicParsing="false" onAction="#chooseMinutes" text="34" />
+                                <MenuItem fx:id="m35" mnemonicParsing="false" onAction="#chooseMinutes" text="35" />
+                                <MenuItem fx:id="m36" mnemonicParsing="false" onAction="#chooseMinutes" text="36" />
+                                <MenuItem fx:id="m37" mnemonicParsing="false" onAction="#chooseMinutes" text="37" />
+                                <MenuItem fx:id="m38" mnemonicParsing="false" onAction="#chooseMinutes" text="38" />
+                                <MenuItem fx:id="m39" mnemonicParsing="false" onAction="#chooseMinutes" text="39" />
+                                <MenuItem fx:id="m40" mnemonicParsing="false" onAction="#chooseMinutes" text="40" />
+                                <MenuItem fx:id="m41" mnemonicParsing="false" onAction="#chooseMinutes" text="41" />
+                                <MenuItem fx:id="m42" mnemonicParsing="false" onAction="#chooseMinutes" text="42" />
+                                <MenuItem fx:id="m43" mnemonicParsing="false" onAction="#chooseMinutes" text="43" />
+                                <MenuItem fx:id="m44" mnemonicParsing="false" onAction="#chooseMinutes" text="44" />
+                                <MenuItem fx:id="m45" mnemonicParsing="false" onAction="#chooseMinutes" text="45" />
+                                <MenuItem fx:id="m46" mnemonicParsing="false" onAction="#chooseMinutes" text="46" />
+                                <MenuItem fx:id="m47" mnemonicParsing="false" onAction="#chooseMinutes" text="47" />
+                                <MenuItem fx:id="m48" mnemonicParsing="false" onAction="#chooseMinutes" text="48" />
+                                <MenuItem fx:id="m49" mnemonicParsing="false" onAction="#chooseMinutes" text="49" />
+                                <MenuItem fx:id="m50" mnemonicParsing="false" onAction="#chooseMinutes" text="50" />
+                                <MenuItem fx:id="m51" mnemonicParsing="false" onAction="#chooseMinutes" text="51" />
+                                <MenuItem fx:id="m52" mnemonicParsing="false" onAction="#chooseMinutes" text="52" />
+                                <MenuItem fx:id="m53" mnemonicParsing="false" onAction="#chooseMinutes" text="53" />
+                                <MenuItem fx:id="m54" mnemonicParsing="false" onAction="#chooseMinutes" text="54" />
+                                <MenuItem fx:id="m55" mnemonicParsing="false" onAction="#chooseMinutes" text="55" />
+                                <MenuItem fx:id="m56" mnemonicParsing="false" onAction="#chooseMinutes" text="56" />
+                                <MenuItem fx:id="m57" mnemonicParsing="false" onAction="#chooseMinutes" text="57" />
+                                <MenuItem fx:id="m58" mnemonicParsing="false" onAction="#chooseMinutes" text="58" />
+                                <MenuItem fx:id="m59" mnemonicParsing="false" onAction="#chooseMinutes" text="59" />
+                            </items>
+                        </MenuButton>
+                    </children>
+                </GridPane>
+                <TextField fx:id="numberOfShipTextField" maxWidth="-Infinity" prefHeight="35.0" prefWidth="144.0" promptText="เลขเรือ" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="nameOfShipTextField" maxWidth="-Infinity" prefHeight="35.0" prefWidth="204.0" promptText="ชื่อเรือ" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label prefHeight="48.0" prefWidth="98.0" text="ชื่อเรือ" GridPane.rowIndex="3" />
+                <Label prefHeight="77.0" prefWidth="246.0" text="ประเภทเรือ" GridPane.rowIndex="4" />
+
+                <MenuButton fx:id="typeOfShip" mnemonicParsing="false" prefHeight="31.0" prefWidth="231.0" text="อวนล้อมจับ" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <items>
+                        <MenuItem fx:id="tp1" onAction="#chooseTypeShip" mnemonicParsing="false" text="อวนล้อมจับ" />
+                        <MenuItem fx:id="tp2" onAction="#chooseTypeShip" mnemonicParsing="false" text="อวนกางกั้นแล้วลาก" />
+                        <MenuItem fx:id="tp3" onAction="#chooseTypeShip" mnemonicParsing="false" text="อวนลาก" />
+                        <MenuItem fx:id="tp4" onAction="#chooseTypeShip" mnemonicParsing="false" text="คราด" />
+                        <MenuItem fx:id="tp5" onAction="#chooseTypeShip" mnemonicParsing="false" text="อวนช้อน อวนยก" />
+                        <MenuItem fx:id="tp6" onAction="#chooseTypeShip" mnemonicParsing="false" text="อวนครอบ" />
+                        <MenuItem fx:id="tp7" onAction="#chooseTypeShip" mnemonicParsing="false" text="อวนติด" />
+                        <MenuItem fx:id="tp8" onAction="#chooseTypeShip" mnemonicParsing="false" text="ดักจับ" />
+                    </items>
+                </MenuButton>
+            <Label text="ขนาดเรือ" GridPane.rowIndex="5" />
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="161.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.0" minWidth="10.0" prefWidth="272.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="sizeOfShipTextField" maxWidth="-Infinity" prefHeight="31.0" prefWidth="148.0" promptText="ขนาด" />
+                  <Label fx:id="unitShip" maxWidth="-Infinity" prefHeight="21.0" prefWidth="120.0" text="ตันกรอส" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+            </children>
+        </GridPane>
+        <Button layoutX="176.0" layoutY="601.0" mnemonicParsing="false" onAction="#cancelPortIn" prefHeight="100.0" prefWidth="270.0" styleClass="btncancle" text="ยกเลิก" />
+        <Button fx:id="submitBtn" layoutX="543.0" layoutY="601.0" mnemonicParsing="false" onAction="#savePortIn" prefHeight="100.0" prefWidth="270.0" styleClass="btnsubmitportin" text="บันทึกการแจ้งเรือเข้า" />
+        <Label layoutX="37.0" layoutY="28.0" prefHeight="53.0" prefWidth="83.0" text="เลขใบ PI/PO" />
+        <Label fx:id="numberPipoLabel" layoutX="46.0" layoutY="84.0" prefHeight="35.0" prefWidth="66.0" text="" />
+    </children>
+</AnchorPane>

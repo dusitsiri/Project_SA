@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 import models.Ships;
 
 import java.io.IOException;
-import java.util.Optional;
 
 public class ControllerOrganizeData {
     Stage stage;
@@ -25,9 +24,9 @@ public class ControllerOrganizeData {
     private TableView<Ships> shipsTableView;
     @FXML
     private TextField pipoNumberTextField;
-    DBShip dbShip = ControllerRecordPortIn.dbShip;
-    DBMemberOfShip dbMemberOfShip = ControllerRecordPortIn.dbMemberOfShip;
-    DBProducts dbProducts = ControllerRecordPortIn.dbProducts;
+    DBShip dbShip = ControllerRecordShipPortIn.dbShip;
+    DBMemberOfShip dbMemberOfShip = ControllerRecordMemberPortIn.dbMemberOfShip;
+    DBProducts dbProducts = ControllerRecordProductPortIn.dbProducts;
     ObservableList<Ships> loadShips = dbShip.loadDBShips();
     ObservableList<Ships> setShip = FXCollections.observableArrayList();
 
@@ -37,7 +36,7 @@ public class ControllerOrganizeData {
             @Override
             public void handle(KeyEvent event) {
                 if (event.getCode() == KeyCode.ENTER) {
-                    searchPipoNumber();
+//                    searchPipoNumber();
                     pipoNumberTextField.setText("");
                     pipoNumberTextField.requestFocus();
                 }
@@ -46,23 +45,23 @@ public class ControllerOrganizeData {
         shipsTableView.setItems(setShip);
     }
 
-    public void searchPipoNumber() {
-        for (Ships ships : loadShips) {
-            if (Integer.parseInt(pipoNumberTextField.getText()) == ships.getNopipo()) {
-                if (setShip.size() == 0){
-                    setShip.add(new Ships(ships.getNopipo(), ships.getPipo(), ships.getNoship(),
-                            ships.getNameship(), ships.getTypeship(), ships.getDate(), ships.getTime()));
-                }
-                else  if (setShip.size() > 0){
-                    setShip.clear();
-                    setShip.add(new Ships(ships.getNopipo(), ships.getPipo(), ships.getNoship(),
-                            ships.getNameship(), ships.getTypeship(), ships.getDate(), ships.getTime()));
-                }
-            }
-        }
-        pipoNumberTextField.setText("");
-        pipoNumberTextField.requestFocus();
-    }
+//    public void searchPipoNumber() {
+//        for (Ships ships : loadShips) {
+//            if (Integer.parseInt(pipoNumberTextField.getText()) == ships.getNopipo()) {
+//                if (setShip.size() == 0){
+//                    setShip.add(new Ships(ships.getNopipo(), ships.getPipo(), ships.getNoship(),
+//                            ships.getNameship(), ships.getTypeship(), ships.getDate(), ships.getTime()));
+//                }
+//                else  if (setShip.size() > 0){
+//                    setShip.clear();
+//                    setShip.add(new Ships(ships.getNopipo(), ships.getPipo(), ships.getNoship(),
+//                            ships.getNameship(), ships.getTypeship(), ships.getDate(), ships.getTime()));
+//                }
+//            }
+//        }
+//        pipoNumberTextField.setText("");
+//        pipoNumberTextField.requestFocus();
+//    }
 
     public void deleteShip(ActionEvent event) throws IOException {
         int noPipo = setShip.get(0).getNopipo();

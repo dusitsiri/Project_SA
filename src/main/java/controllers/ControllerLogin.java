@@ -20,6 +20,7 @@ public class ControllerLogin {
     @FXML private Button staffButton;
     @FXML private Button pipoButton;
     @FXML private Button loginButton;
+    static String user = null;
 
     public void initialize(){
         staffButton.setOnMouseClicked((MouseEvent e) -> {
@@ -28,6 +29,7 @@ public class ControllerLogin {
             pipoButton.setMnemonicParsing(false);
             staffButton.setDisable(true);
             pipoButton.setDisable(false);
+            user = "staff";
         });
         pipoButton.setOnMouseClicked((MouseEvent e) -> {
             setOption();
@@ -35,7 +37,7 @@ public class ControllerLogin {
             staffButton.setMnemonicParsing(false);
             pipoButton.setDisable(true);
             staffButton.setDisable(false);
-
+            user = "pipo";
         });
         passwordField.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override

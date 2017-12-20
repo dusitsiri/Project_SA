@@ -33,7 +33,8 @@ public class DBProducts {
                     String nameProduct = resultSet.getString(3);
                     String typeProduct = resultSet.getString(4);
                     String qtyProduct = resultSet.getString(5);
-                    data.add(new Products(no,nopipo,nameProduct,typeProduct,qtyProduct));
+                    String unitProduct = resultSet.getString(6);
+                    data.add(new Products(no,nopipo,nameProduct,typeProduct,qtyProduct,unitProduct));
                 }
                 //close connection
 
@@ -46,16 +47,16 @@ public class DBProducts {
         return data;
     }
 
-    public void addProductToDB(int no, int nopipo, String nameproduct, String typeproduct, String qtyproduct){
+    public void addProductToDB(int no, int nopipo, String nameproduct, String typeproduct, String qtyproduct, String unitproduct){
         try{
             Class.forName("org.sqlite.JDBC");
             String dbURL = "jdbc:sqlite:DBProduct.db";
             Connection connection = DriverManager.getConnection(dbURL);
             if (connection != null){
                 String query = "insert into products(no, nopipo, nameproduct, " +
-                        "typeproduct, qtyproduct) values " +
+                        "typeproduct, qtyproduct, unitproduct) values " +
                         "(\'" +no+ "\', \'" +nopipo+ "\', \'" +nameproduct+ "\'," +
-                        "\'" +typeproduct+ "\', \'" +qtyproduct+ "')";
+                        "\'" +typeproduct+ "\', \'" +qtyproduct+ "\', \'" +unitproduct+ "')";
                 PreparedStatement p = connection.prepareStatement(query);
                 p.executeUpdate();
                 connection.close();

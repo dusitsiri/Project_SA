@@ -17,20 +17,27 @@ public class ControllerMainView {
     @FXML private Button  btnRecordPortIn,btnRecordPortOut,
             btnReportPortOutNextDay,btnReportPipoDaily,btnOrganizeData;
 
+    public void initialize(){
+        if (ControllerLogin.user.equals("pipo")){
+            btnRecordPortIn.setDisable(true);
+            btnRecordPortOut.setDisable(true);
+        }
+    }
+
     public void setStage(ActionEvent event){
         Button button = (Button) event.getSource();
         stage = (Stage) button.getScene().getWindow();
     }
     public void recordPortIn(ActionEvent event) throws IOException{
         setStage(event);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../recordportin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../recordshipportin.fxml"));
         stage.setScene(new Scene(loader.load()));
         stage.show();
     }
 
     public void recordPortOut(ActionEvent event) throws IOException {
         setStage(event);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../recordportout.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../recordshipportout.fxml"));
         stage.setScene(new Scene(loader.load()));
         stage.show();
     }

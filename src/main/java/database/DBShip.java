@@ -29,13 +29,11 @@ public class DBShip {
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()) {
                     int nopipo = resultSet.getInt(1);
-                    String pipo = resultSet.getString(2);
-                    String noship = resultSet.getString(3);
-                    String nameship = resultSet.getString(4);
-                    String typeship = resultSet.getString(5);
-                    String date = resultSet.getString(6);
-                    String time = resultSet.getString(7);
-                    data.add(new Ships(nopipo, pipo, noship, nameship, typeship, date, time));
+                    String noship = resultSet.getString(2);
+                    String nameship = resultSet.getString(3);
+                    String typeship = resultSet.getString(4);
+                    int sizeShip = resultSet.getInt(5);
+                    data.add(new Ships(nopipo, noship, nameship, typeship, sizeShip));
                 }
                 //close connection
 
@@ -48,18 +46,18 @@ public class DBShip {
         return data;
     }
 
-    public void addShipToDB(int nopipo, String pipo, String noship, String nameship,
-                            String typeship, String date, String time) {
+    public void addShipToDB(int nopipo, String noship, String nameship,
+                            String typeship, int sizeShip) {
         try {
             Class.forName("org.sqlite.JDBC");
             String dbURL = "jdbc:sqlite:DBShip.db";
             Connection connection = DriverManager.getConnection(dbURL);
             if (connection != null) {
-                String query = "insert into ships(nopipo, pipo, noship, " +
-                        "nameship, typeship, date, time) values " +
-                        "(\'" + nopipo + "\', \'" + pipo + "\', \'" + noship + "\'," +
-                        "\'" + nameship + "\', \'" + typeship + "\', \'" + date + "\', " +
-                        "\'" + time + "')";
+                String query = "insert into ships(nopipo, noship, " +
+                        "nameship, typeship, sizeship) values " +
+                        "(\'" + nopipo + "\', \'" + noship + "\'," +
+                        "\'" + nameship + "\', \'" + typeship + "\', " +
+                        "\'" + sizeShip + "')";
                 PreparedStatement p = connection.prepareStatement(query);
                 p.executeUpdate();
                 connection.close();
